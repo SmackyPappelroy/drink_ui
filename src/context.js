@@ -6,6 +6,7 @@ const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [drinks, setDrinks] = useState([])
 
@@ -49,7 +50,16 @@ const AppProvider = ({ children }) => {
     fetchDrinks()
   }, [searchTerm, fetchDrinks])
   return (
-    <AppContext.Provider value={{ loading, drinks, searchTerm, setSearchTerm }}>
+    <AppContext.Provider
+      value={{
+        loading,
+        drinks,
+        searchTerm,
+        setSearchTerm,
+        isNavbarOpen,
+        setIsNavbarOpen,
+      }}
+    >
       {children}
     </AppContext.Provider>
   )
