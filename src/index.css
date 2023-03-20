@@ -39,39 +39,39 @@ body {
 ul {
   list-style-type: none;
 }
+.main {
+  background-image: url('./Images/chicken-in-red-wine-sauce-01.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
 
 /* Smartphone */
-@media screen and (min-width: 800px) {
+@media only screen and (max-width: 800px) {
   h1 {
     font-weight: 400;
     font-size: 50px;
     line-height: 62px;
     text-transform: capitalize;
   }
-  .main {
-    background-image: url('./Images/chicken-in-red-wine-sauce-01.jpg');
-    background-repeat: repeat;
-    background-size: cover;
-    background-position: center;
-    height: 600px;
-    background-color: transparent;
-  }
-}
 
-/* Desktop */
-@media screen and (min-width: 1200px) {
-  h1 {
-    font-weight: 400;
-    font-size: 100px;
-    line-height: 125px;
-    text-transform: capitalize;
-  }
   .main {
     background-image: url('./Images/chicken-in-red-wine-sauce-01.jpg');
     background-repeat: repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 800px) {
+  h1 {
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 125px;
+    text-transform: capitalize;
   }
 }
 
