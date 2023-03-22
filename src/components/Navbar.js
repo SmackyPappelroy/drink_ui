@@ -1,7 +1,7 @@
 import React from 'react'
 import { useGlobalContext } from '../context'
 function Navbar() {
-  const { isNavbarOpen, setIsNavbarOpen } = useGlobalContext()
+  const { NavbarOpen, setNavbarOpen } = useGlobalContext()
 }
 
 export default Navbar

@@ -46,7 +46,6 @@ ul {
   background-position: center;
   height: 100vh;
 }
-
 /* Smartphone */
 @media only screen and (max-width: 800px) {
   h1 {
@@ -64,6 +63,9 @@ ul {
     font-size: 100px;
     line-height: 125px;
     text-transform: capitalize;
+  }
+  .main {
+    background-image: url('./Images/chicken-in-red-wine-sauce-01ROTATED.jpg');
   }
 }
 
