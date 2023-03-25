@@ -1,15 +1,12 @@
 import logo from './logo.svg'
 import './App.css'
-import Navbar from './components/Navbar'
+import DishCard from './components/DishCard/DishCard'
 
 function App() {
-  return (
-    <>
-      <Navbar>
-        
-      </Navbar>
-    </>
-  )
-  }
+  return <div className="main">
+    <DishCard></DishCard>
+  </div>
+}
+
 
 export default App
