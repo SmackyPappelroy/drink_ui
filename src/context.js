@@ -14,7 +14,7 @@ const AppProvider = ({ children }) => {
   const [recipes, setRecipes] = useState([])
   const [selectedRecipe, setSelectedRecipe] = useState(null)
 
-  const apiKey = '&apiKey=0bb4b70465ef44b98ece530f9f0fa515'
+  const apiKey = '&apiKey=yourApiKeyHere'
   const headers = {
     'Content-Type': 'application/json',
     'X-Api-Key': apiKey,
