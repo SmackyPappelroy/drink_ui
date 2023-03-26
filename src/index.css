@@ -34,16 +34,20 @@ Global Styles
 }
 body {
   font-family: 'Lobster';
+  background-image: url('./Images/chicken-in-red-wine-sauce-01.jpg');
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 ul {
   list-style-type: none;
 }
 .main {
-  background-image: url('./Images/chicken-in-red-wine-sauce-01.jpg');
+  /* background-image: url('./Images/chicken-in-red-wine-sauce-01.jpg');
   background-repeat: repeat;
-  background-size: cover;
-  background-position: center;
+  background-attachment: fixed; */
+  /* background-size: cover; */
+  /* background-position: center; */
   height: 100vh;
 }
 /* Smartphone */
@@ -64,9 +68,9 @@ ul {
     line-height: 125px;
     text-transform: capitalize;
   }
-  .main {
+  /* .main {
     background-image: url('./Images/chicken-in-red-wine-sauce-01ROTATED.jpg');
-  }
+  } */
 }
 
 .navbar-smartphone-close {
