@@ -1,0 +1,99 @@
+.collapsed.navbar-mobile {
+       position: relative !important;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 80px;
+       padding: 0 20px;
+       background-color: #ffffff;
+       box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+       top: 0;
+       transform: translateY(0%);
+}
+
+.navbar-mobile {
+       height: 100vh;
+       width: 100vw;
+       align-items: center;
+}
+
+.navbar-header {
+       display: flex;
+       width: 100%;
+       justify-content: center;
+       align-items: center;
+}
+
+.mobile.navbar .navbar-toggler {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 50px;
+       width: 50px;
+       border: none;
+       background-color: transparent;
+       font-size: 1.5rem;
+       color: #6c757d;
+       position: absolute;
+       left: 0;
+
+}
+
+.mobile.navbar .navbar-toggler:focus,
+.mobile.navbar .navbar-toggler:hover {
+       outline: none;
+       color: #007bff;
+}
+
+.mobile.navbar .navbar-nav {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 0;
+       padding: 0;
+}
+
+.mobile.navbar .navbar-nav .nav-item {
+       list-style: none;
+       margin-left: 20px;
+       font-size: 1.2rem;
+       color: #6c757d;
+}
+
+.mobile.navbar .navbar-nav .nav-item a {
+       color: #6c757d;
+       text-decoration: none;
+}
+
+.mobile.navbar .navbar-nav .nav-item a:hover {
+       color: #007bff;
+}
+
+.mobile.navbar.collapsed {}
+
+.mobile.navbar.collapsed .navbar-toggler {
+       order: 1;
+       margin-right: 20px;
+}
+
+.mobile.navbar.collapsed .navbar-nav {
+       order: 3;
+       width: 100%;
+}
+
+.mobile.navbar.collapsed .navbar-nav .nav-item {
+       margin-left: 0;
+       margin-top: 10px;
+}
+
+.mobile.navbar.collapsed .navbar-nav .nav-item:first-child {
+       margin-top: 20px;
+}
+
+.mobile.navbar.collapsed .navbar-nav .nav-item:last-child {
+       margin-bottom: 20px;
+}
+
+.mobile.navbar.collapsed .navbar-nav .nav-item a {
+       font-size: 1.5rem;
+}
