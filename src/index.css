@@ -100,7 +100,6 @@ ul {
   position: relative;
   width: 360px;
   height: 111px;
-
   background: var(--clr-primary-white);
   border-radius: 20px;
 }

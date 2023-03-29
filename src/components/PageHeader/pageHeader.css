@@ -1,0 +1,20 @@
+.page-header {
+       display: flex;
+       align-items: center;
+       justify-content: flex-start;
+       gap: .3em;
+}
+
+.page-header h1 {
+       color: #D9D9D9;
+}
+
+.page-header svg {
+       color: #000000c0 !important;
+}
+
+@media (max-width: 800px) {
+       .page-header svg {
+              font-size: 2em;
+       }
+}
