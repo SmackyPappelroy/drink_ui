@@ -20,8 +20,12 @@ const useCollapse = () => {
     console.log(isCollapsed)
     setIsCollpasedToLS();
   };
+  const setToCollapse = () => {
+    setIsCollapsed(true);
+    setIsCollpasedToLS();
+  };
 
   console.log({ isCollapsed, toggleCollapse })
-  return { isCollapsed, toggleCollapse };
+  return { isCollapsed, toggleCollapse, setToCollapse };
 };
 export default useCollapse;
