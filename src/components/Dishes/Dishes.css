@@ -30,13 +30,19 @@
   border-radius: 20px;
 }
 .dishesTitle {
-  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: '. .';
   font-size: 30px;
   font-weight: 600;
   width: 100%;
 }
 
 .fine-dine {
+  grid-row: 1;
+  grid-column: 1;
   display: flex;
   flex-direction: row;
   align-items: left;
@@ -44,6 +50,24 @@
   margin-right: 2px;
   font-weight: bold;
   font-size: 45px;
+}
+
+.icons {
+  grid-row: 1;
+  gap: 2px;
+  grid-column: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right;
+  margin-left: 2px;
+}
+
+.icon-clicked {
+  color: #000000;
+}
+.icon-unclicked {
+  color: #818181;
 }
 
 .hidden {
