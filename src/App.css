@@ -1,3 +1,15 @@
+:root {
+  --gray-color: #c7c7c7;
+  --light-gray-color: #f5f5f5;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -38,11 +50,15 @@
   }
 }
 
+.title-gray {
+  color: var(--gray-color);
+}
+
 .button {
   background-color: lightgray; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;

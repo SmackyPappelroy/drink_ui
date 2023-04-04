@@ -28,6 +28,7 @@ const AppProvider = ({ children }) => {
       console.log(myRecipes)
       if (myRecipes) {
         const newRecipes = myRecipes.map((recipe) => ({
+          id: recipe.id,
           cheap: recipe.cheap,
           cuisines: recipe.cuisines,
           dairyFree: recipe.dairyFree,
@@ -35,7 +36,6 @@ const AppProvider = ({ children }) => {
           drinks: recipe.drinks,
           extendedIngredients: recipe.extendedIngredients,
           glutenFree: recipe.glutenFree,
-          id: recipe.id,
           image: recipe.image,
           ingredients: recipe.ingredients,
           instructions: recipe.instructions,

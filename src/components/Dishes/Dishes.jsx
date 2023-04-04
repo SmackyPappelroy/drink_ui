@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../../context'
 import './Dishes.css'
+import '../../App.css'
 import SimpleDishCard from '../SimpleDishCard/SimpleDishCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
@@ -29,18 +30,22 @@ function Dishes() {
     }
   }
 
+  const changePage = (index) => {
+    setStart(index)
+    setEnd(index + 10)
+  }
+
   console.log('Laddar' + loading)
   if (loading) {
     return <h1 className="Laddar"></h1>
   } else {
     return (
-      // mobile size class name
       <div className={isMobileSize ? 'dishes-mobile' : 'dishes'}>
         <div className="dishesTitle">
-          <h2>
-            FineDine {/* Display on same line */}
-            <FontAwesomeIcon icon={Icon.faDrumstickBite} size={'50px'} />
-            <FontAwesomeIcon icon={Icon.faChampagneGlasses} size={'50px'} />
+          <h2 className="fine-dine">
+            <div className="title-gray">FineDine</div>
+            <FontAwesomeIcon icon={Icon.faDrumstickBite} />
+            <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
           </h2>
         </div>
 
@@ -60,9 +65,24 @@ function Dishes() {
         </button>
 
         {/* Display start and end in the middle */}
-        <p>
-          {start + 1} - {end} av {recipes.length}
-        </p>
+
+        {/* Display a dot for each page, and highlight the current page */}
+        <div className="page">
+          <p>
+            {start + 1} - {end} av {recipes.length}
+          </p>
+          <div className="dots">
+            {recipes.slice(start, end).map((recipe, index) => {
+              return (
+                <span
+                  key={index}
+                  onClick={() => changePage(index * 10)}
+                  className={index * 10 === start ? 'dot-active' : 'dot'}
+                ></span>
+              )
+            })}
+          </div>
+        </div>
 
         {/* Display the next 10 recipes */}
         <button className="button" onClick={() => increment()}>
