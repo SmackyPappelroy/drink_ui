@@ -1,0 +1,190 @@
+.drinkCard {
+  position: absolute;
+  width: 80vh;
+  height: 60vh;
+
+  background: #ffffff;
+  border-radius: 4vh;
+}
+
+.header {
+  position: relative;
+  width: 20vh;
+  height: 30vh;
+  left: 5%;
+  top: 3%;
+}
+.logo {
+  position: relative;
+  width: 10%;
+  height: 10%;
+  left: 0px;
+  top: 0px;
+}
+.logoText {
+  position: relative;
+  left: 0.03%;
+  right: 0.11%;
+  top: 0%;
+  bottom: 0.48%;
+
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 62px;
+  text-transform: capitalize;
+  color: #d9d9d9;
+  transform: rotate(0.07deg);
+}
+.logoPics {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: relative;
+  left: 71.07%;
+  right: 0%;
+  top: 24.38%;
+  bottom: 14.68%;
+}
+.logoPic1 {
+  width: 35px;
+  height: 35px;
+
+  background: url('../../Images/misc/WineGlasses.png');
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.logoPic2 {
+  width: 35px;
+  height: 35px;
+
+  background: url('../../Images/misc/ChickenWithBones.png');
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.headLine {
+  position: relative;
+  left: 46.59%;
+  right: 0%;
+  top: 16.19%;
+  bottom: 1.37%;
+
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 56px;
+  text-transform: capitalize;
+  text-decoration: underline;
+  text-decoration-color: grey;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(0.13deg);
+}
+.headLinePic {
+  position: relative;
+  left: 40.81%;
+  right: 53.41%;
+  top: 22.08%;
+  bottom: 0%;
+
+  background: url('../../Images/misc/forkThingy.png');
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 20px;
+}
+.body {
+  position: relative;
+  width: 944.39px;
+  height: 350px;
+  left: 74px;
+  top: 132px;
+}
+.drinkPicture {
+  position: relative;
+  width: 30%;
+  height: 30%;
+  left: 0%;
+  right: 62.94%;
+  top: 0%;
+  bottom: 0%;
+
+  background: url('../../Images/dishes/MushroomPeppers.png');
+  border-radius: 20px;
+}
+.drinkDescription {
+  position: relative;
+  left: 42.72%;
+  right: 0%;
+  top: 2.29%;
+  bottom: 33.43%;
+
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: capitalize;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(0.13deg);
+}
+.dishRecommend {
+  position: relative;
+  left: 42.68%;
+  right: 12.95%;
+  top: 86.29%;
+  bottom: 2.86%;
+
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  /* identical to box height */
+
+  text-transform: capitalize;
+  text-decoration: underline;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(0.13deg);
+}
+.footer {
+  position: relative;
+  width: 100px;
+  height: 156.08px;
+  left: 477px;
+  top: 521px;
+}
+.picture {
+  position: relative;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 16.66%;
+
+  background: url('../../Images/drinks/MalbecRedWine.png');
+  border-radius: 100px;
+}
+.pictureText {
+  position: relative;
+  left: 16.01%;
+  right: 15.99%;
+  top: 91.62%;
+  bottom: 0.05%;
+
+  font-family: 'Lobster';
+  font-style: normal;
+
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  /* identical to box height */
+
+  text-transform: capitalize;
+}

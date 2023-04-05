@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../../context'
-import '../Card.css'
-// import './Contact.css'
+import './Meals.css'
 import '../../App.css'
-import SimpleDishCard from '../SimpleDishCard/SimpleDishCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
 import FilterButtons from '../Buttons/Filterbuttons'
 import filters from '../Buttons/Filters'
-import friesbeer from '../../fries&beer.gif'
-import chickenbeer from '../../chickenandbeer.gif'
-import pouringbeer from '../../pouringbeer.gif'
-import salmonwine from '../../salmonwine.gif'
+import SimpleDrinkCard from '../SimpleDrinkCard/SimpleDrinkCard'
+import SimpleDishCard from '../SimpleDishCard/SimpleDishCard'
 
-function Contact() {
+function Meals() {
   // Go to this page when you click on the dishes button in the navbar
 
   const { recipes, loading, isMobileSize } = useGlobalContext()
@@ -108,29 +104,39 @@ function Contact() {
           <h2 className="fine-dine">
             <div className="title-gray">FineDine</div>
             <FontAwesomeIcon icon={Icon.faDrumstickBite} />
-            <FontAwesomeIcon icon={Icon.faChampagneGlasses} /> About
+            <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
+            Meals
           </h2>
+          <div className="icons">
+            <FilterButtons
+              filters={filters}
+              activeFilters={{
+                dairyFree,
+                glutenFree,
+                ketogenic,
+                vegetarian,
+                vegan,
+                veryHealthy,
+              }}
+              onFilterChange={filterFood}
+            />
+          </div>
         </div>
 
         {!filteredRecipes || filteredRecipes.length > 0 ? (
           filteredRecipes.slice(start, end).map((recipe) => {
-            return (<SimpleDishCard
+            return (
+              <SimpleDishCard
                 key={recipe.id}
                 className="simpleDishCard"
                 image={recipe.image}
                 title={recipe.title}
-                id={recipe.id}/>)})
+                id={recipe.id}
+              />
+            )
+          })
         ) : (
-          <div className="infotext">
-            <p>Our idea is try to find best combonation of dishes that fit well to certain drinks.
-          wine with steak, chicken. </p>
-            <p> Some special dishes that fit well to certain drink.</p>
-            <br></br>
-            <img src={friesbeer} alt="my-gif" className='fooddrink'/>
-            <img src={chickenbeer} alt="my-gif" className='fooddrink'/>
-            <img src={salmonwine} alt="my-gif" className='fooddrink'/>
-            <img src={pouringbeer} alt="my-gif" className='fooddrink'/>
-        </div>
+          <h1 className="infotext">Hittade inga recept</h1>
         )}
         <button
           className={filteredRecipes.length > 10 ? 'button' : 'hidden'}
@@ -169,4 +175,4 @@ function Contact() {
   }
 }
 
-export default Contact
+export default Meals
