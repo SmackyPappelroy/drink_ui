@@ -3,23 +3,19 @@
        display: flex;
        justify-content: center;
        align-items: center;
-       height: 80px !important;
+       height: 80px;
        padding: 0 20px;
        background-color: #ffffff;
        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-       left: 0 !important;
+       top: 0;
+       transform: translateY(0%);
 }
 
 .navbar-mobile {
-       position: fixed;
-       height: 100vh !important;
+       height: 100vh;
        width: 100vw;
        align-items: center;
        border-radius: 0 !important;
-       top: 0 !important;
-       transform: translateY(0%) !important;
-       left: 0 !important;
-       background-color: #ffffff;
 }
 
 .navbar-header {
@@ -27,17 +23,6 @@
        width: 100%;
        justify-content: center;
        align-items: center;
-       height: 75px;
-       position: absolute;
-       top: 0;
-}
-
-.collapsed.navbar-mobile .navbar-header {
-       margin-bottom: 0;
-}
-
-.navbar-mobile .navbar-header {
-       margin-bottom: 30px;
 }
 
 .mobile.navbar .navbar-toggler {
@@ -52,7 +37,7 @@
        color: #6c757d;
        position: absolute;
        left: 0;
-       top: 15px;
+
 }
 
 .mobile.navbar .navbar-toggler:focus,
@@ -65,30 +50,51 @@
        display: flex;
        justify-content: center;
        align-items: center;
-       flex-direction: column;
        margin: 0;
        padding: 0;
-       position: relative;
-       top: 70px;
 }
 
 .mobile.navbar .navbar-nav .nav-item {
-       position: relative;
        list-style: none;
        margin-left: 20px;
        font-size: 1.2rem;
        color: #6c757d;
-       width: 220px;
-
 }
 
-.mobile.navbar .navbar-nav .nav-link {
-       flex-direction: row-reverse;
-       justify-content: flex-end;
+.mobile.navbar .navbar-nav .nav-item a {
+       color: #6c757d;
+       text-decoration: none;
 }
 
-.mobile.navbar .navbar-nav .nav-link svg {
-       position: absolute;
-       margin-right: 10px;
-       right: 215px;
+.mobile.navbar .navbar-nav .nav-item a:hover {
+       color: #007bff;
+}
+
+.mobile.navbar.collapsed {}
+
+.mobile.navbar.collapsed .navbar-toggler {
+       order: 1;
+       margin-right: 20px;
+}
+
+.mobile.navbar.collapsed .navbar-nav {
+       order: 3;
+       width: 100%;
+}
+
+.mobile.navbar.collapsed .navbar-nav .nav-item {
+       margin-left: 0;
+       margin-top: 10px;
+}
+
+.mobile.navbar.collapsed .navbar-nav .nav-item:first-child {
+       margin-top: 20px;
+}
+
+.mobile.navbar.collapsed .navbar-nav .nav-item:last-child {
+       margin-bottom: 20px;
+}
+
+.mobile.navbar.collapsed .navbar-nav .nav-item a {
+       font-size: 1.5rem;
 }

@@ -37,6 +37,7 @@ const Dish = () => {
           <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
         </h2>
       </div>
+      <h5 className="allergens">insert allergen icons here</h5>
       <div className="dish-info">
         <h1 className="dish-name">{myRecipe.title}</h1>
       </div>
@@ -52,23 +53,6 @@ const Dish = () => {
         ) : (
           <p>Hittade inga ingredienser.</p>
         )}
-      </div>
-      <h2 className="drink-headline">Rekommenderad dryck</h2>
-      <div className="drinks">
-        {myRecipe.drinks
-          ? myRecipe.drinks.map((drink, index) => {
-              return (
-                <div className="drink" key={index}>
-                  <img
-                    className="drink-image"
-                    src={drink.image}
-                    alt={drink.name}
-                  />
-                  <h4 className="drink-name">{drink.name}</h4>
-                </div>
-              )
-            })
-          : 'Hittade inga rekommenderade drycker.'}
       </div>
     </div>
   )

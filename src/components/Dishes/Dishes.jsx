@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../../context'
-import './Dishes.css'
+import '../Card.css'
+// import './Dishes.css'
 import '../../App.css'
 import SimpleDishCard from '../SimpleDishCard/SimpleDishCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,6 +10,8 @@ import FilterButtons from '../Buttons/Filterbuttons'
 import filters from '../Buttons/Filters'
 
 function Dishes() {
+  // Go to this page when you click on the dishes button in the navbar
+
   const { recipes, loading, isMobileSize } = useGlobalContext()
   const [start, setStart] = React.useState(0)
   const [end, setEnd] = React.useState(10)
@@ -55,7 +58,7 @@ function Dishes() {
       if (veryHealthy && !recipe.veryHealthy) return false
       return true
     })
-    console.log(filtered)
+    console.log(filtered.length)
     setFilteredRecipes(filtered.length > 0 ? filtered : [])
   }
 
@@ -92,16 +95,17 @@ function Dishes() {
   }
 
   if (loading) {
-    return <h1 className="infotext">Laddar...</h1>
+    return <h1 className="infotext"></h1>
   } else {
     console.log(filteredRecipes.length)
     return (
-      <div className={isMobileSize ? 'dishes-mobile' : 'dishes'}>
-        <div className="dishesTitle">
+      <div className={isMobileSize ? 'card-mobile' : 'card'}>
+        <div className="cardTitle">
           <h2 className="fine-dine">
             <div className="title-gray">FineDine</div>
             <FontAwesomeIcon icon={Icon.faDrumstickBite} />
             <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
+            Dishes
           </h2>
           <div className="icons">
             <FilterButtons
@@ -132,7 +136,7 @@ function Dishes() {
             )
           })
         ) : (
-          <h1 className="infotext">Hittade inga recept</h1>
+          <p className="infotext">Hittade inga recept</p>
         )}
         <button
           className={filteredRecipes.length > 10 ? 'button' : 'hidden'}
