@@ -7,14 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
 import FilterButtons from '../Buttons/Filterbuttons'
 import filters from '../Buttons/Filters'
-import {
-  faCheese,
-  faBreadSlice,
-  faBacon,
-  faCarrot,
-  faLeaf,
-  faHeart,
-} from '@fortawesome/free-solid-svg-icons'
 
 function Dishes() {
   // Go to this page when you click on the dishes button in the navbar
@@ -65,8 +57,8 @@ function Dishes() {
       if (veryHealthy && !recipe.veryHealthy) return false
       return true
     })
-
-    setFilteredRecipes(filtered.length > 0 ? filtered : recipes)
+    console.log(filtered.length)
+    setFilteredRecipes(filtered.length > 0 ? filtered : [])
   }
 
   const filterFood = (filter) => {
@@ -101,9 +93,10 @@ function Dishes() {
     setEnd(index + 10)
   }
 
-  if (loading || !filteredRecipes || filteredRecipes.length === 0) {
-    return <h1 className="Laddar"></h1>
+  if (loading) {
+    return <h1 className="infotext"></h1>
   } else {
+    console.log(filteredRecipes.length)
     return (
       <div className={isMobileSize ? 'dishes-mobile' : 'dishes'}>
         <div className="dishesTitle">
@@ -128,17 +121,21 @@ function Dishes() {
           </div>
         </div>
 
-        {filteredRecipes.slice(start, end).map((recipe) => {
-          return (
-            <SimpleDishCard
-              key={recipe.id}
-              className="simpleDishCard"
-              image={recipe.image}
-              title={recipe.title}
-              id={recipe.id}
-            />
-          )
-        })}
+        {!filteredRecipes || filteredRecipes.length > 0 ? (
+          filteredRecipes.slice(start, end).map((recipe) => {
+            return (
+              <SimpleDishCard
+                key={recipe.id}
+                className="simpleDishCard"
+                image={recipe.image}
+                title={recipe.title}
+                id={recipe.id}
+              />
+            )
+          })
+        ) : (
+          <h1 className="infotext">Hittade inga recept</h1>
+        )}
         <button
           className={filteredRecipes.length > 10 ? 'button' : 'hidden'}
           onClick={() => decrement()}
