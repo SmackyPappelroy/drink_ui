@@ -29,21 +29,21 @@ const NavList = ({ isCollapsed, setToCollapse }) => {
           </li>
           <li className="nav-item">
             <NavItem
-              href="/best-combos"
+              href="/meals"
               icon={Icon.faChampagneGlasses}
               setToCollapse={setToCollapse}
             />
           </li>
           <li className="nav-item">
             <NavItem
-              href="/info"
-              icon={Icon.faInfo}
+              href="/about"
+              icon={Icon.faInfoCircle}
               setToCollapse={setToCollapse}
             />
           </li>
           <li className="nav-item">
             <NavItem
-              href="/about"
+              href="/contact"
               icon={Icon.faAddressCard}
               setToCollapse={setToCollapse}
             />
@@ -70,16 +70,16 @@ const NavList = ({ isCollapsed, setToCollapse }) => {
           </li>
           <li className="nav-item">
             <NavItem
-              href="/best-combos"
-              text="Best Combos"
+              href="/meals"
+              text="Meals"
               setToCollapse={setToCollapse}
             />
           </li>
           <li className="nav-item">
-            <NavItem href="/info" text="Info" setToCollapse={setToCollapse} />
+            <NavItem href="/about" text="About" setToCollapse={setToCollapse} />
           </li>
           <li className="nav-item">
-            <NavItem href="/about" text="about" setToCollapse={setToCollapse} />
+            <NavItem href="/contact" text="Contact" setToCollapse={setToCollapse} />
           </li>
         </ul>
       )}

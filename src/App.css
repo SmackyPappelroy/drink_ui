@@ -54,6 +54,22 @@ body {
   color: var(--gray-color);
 }
 
+.fooddrink{
+  height: 60%;
+  width: 20%;
+  border-radius: 10px;
+  margin:10px;
+  position: relative;
+}
+
+.drink{
+  height: 60%;
+  width: 20%;
+  border-radius: 10px;
+  margin:20px;
+  position: relative;
+}
+
 .button {
   background-color: lightgray; /* Green */
   border: none;

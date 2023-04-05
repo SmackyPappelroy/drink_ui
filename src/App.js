@@ -3,6 +3,8 @@ import './App.css'
 import React, { useState, useEffect } from 'react'
 import DishCard from './components/DishCard/DishCard'
 import Dishes from './components/Dishes/Dishes'
+import DrinkCard from './components/DrinkCard/DrinkCard'
+import Drinks from './components/Drinks/Drinks'
 import Navbar from './components/Navbar/navbar'
 import Main from './components/main'
 

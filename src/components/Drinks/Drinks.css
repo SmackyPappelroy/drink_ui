@@ -1,9 +1,9 @@
-/* .dishes {
+.drink {
   position: absolute;
   padding: 20px;
   margin-top: 1%;
   margin-bottom: 2%;
-  width: 70%;
+  width: 90%;
   height: auto;
   left: 10%;
   display: flex;
@@ -12,9 +12,8 @@
   justify-content: space-between;
   background-color: white;
   border-radius: 20px;
-  height: 95%;
 }
-.dishes-mobile {
+.drink-mobile {
   position: absolute;
   padding: 20px;
   margin-top: 1%;
@@ -30,7 +29,7 @@
   background-color: white;
   border-radius: 20px;
 }
-.dishesTitle {
+.drinkTitle {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -76,9 +75,9 @@
 .hidden {
   display: none;
 }
-.infotext { */
+.infotext {
   /* display center screen */
-  /* width: auto;
+  width: auto;
   height: auto;
   font-weight: 400;
   top: 30%;
@@ -120,4 +119,5 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-} */
+}
+
