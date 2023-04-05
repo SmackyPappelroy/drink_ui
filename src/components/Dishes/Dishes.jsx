@@ -9,8 +9,6 @@ import FilterButtons from '../Buttons/Filterbuttons'
 import filters from '../Buttons/Filters'
 
 function Dishes() {
-  // Go to this page when you click on the dishes button in the navbar
-
   const { recipes, loading, isMobileSize } = useGlobalContext()
   const [start, setStart] = React.useState(0)
   const [end, setEnd] = React.useState(10)
