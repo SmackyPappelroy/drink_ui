@@ -70,6 +70,8 @@ function Dishes() {
   }
 
   const filterFood = (filter) => {
+    setStart(0)
+    setEnd(10)
     switch (filter) {
       case 'vegan':
         setVegan((prev) => !prev)
