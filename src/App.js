@@ -3,6 +3,17 @@ import './App.css'
 import React, { useState, useEffect } from 'react'
 import DishCard from './components/DishCard/DishCard'
 import Dishes from './components/Dishes/Dishes'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+import DrinkCard from './components/DrinkCard/DrinkCard'
+import Drinks from './components/Drinks/Drinks'
+>>>>>>> f938a51 (Navigation Added)
+>>>>>>> 9f4dbb1 (NavigationAdded)
+>>>>>>> e0b40db (NavigationAdded)
 import Navbar from './components/Navbar/navbar'
 import Main from './components/main'
 

@@ -1,6 +1,19 @@
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../../context'
+<<<<<<< HEAD
 import './Dishes.css'
+=======
+<<<<<<< HEAD
+import './Dishes.css'
+=======
+<<<<<<< HEAD
+import './Dishes.css'
+=======
+import '../Card.css'
+// import './Dishes.css'
+>>>>>>> f938a51 (Navigation Added)
+>>>>>>> 9f4dbb1 (NavigationAdded)
+>>>>>>> e0b40db (NavigationAdded)
 import '../../App.css'
 import SimpleDishCard from '../SimpleDishCard/SimpleDishCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -98,12 +111,37 @@ function Dishes() {
   } else {
     console.log(filteredRecipes.length)
     return (
+<<<<<<< HEAD
       <div className={isMobileSize ? 'dishes-mobile' : 'dishes'}>
         <div className="dishesTitle">
+=======
+<<<<<<< HEAD
+      <div className={isMobileSize ? 'dishes-mobile' : 'dishes'}>
+        <div className="dishesTitle">
+=======
+<<<<<<< HEAD
+      <div className={isMobileSize ? 'dishes-mobile' : 'dishes'}>
+        <div className="dishesTitle">
+=======
+      <div className={isMobileSize ? 'card-mobile' : 'card'}>
+        <div className="cardTitle">
+>>>>>>> f938a51 (Navigation Added)
+>>>>>>> 9f4dbb1 (NavigationAdded)
+>>>>>>> e0b40db (NavigationAdded)
           <h2 className="fine-dine">
             <div className="title-gray">FineDine</div>
             <FontAwesomeIcon icon={Icon.faDrumstickBite} />
             <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+            Dishes
+>>>>>>> f938a51 (Navigation Added)
+>>>>>>> 9f4dbb1 (NavigationAdded)
+>>>>>>> e0b40db (NavigationAdded)
           </h2>
           <div className="icons">
             <FilterButtons
@@ -134,7 +172,19 @@ function Dishes() {
             )
           })
         ) : (
+<<<<<<< HEAD
           <h1 className="infotext">Hittade inga recept</h1>
+=======
+<<<<<<< HEAD
+          <h1 className="infotext">Hittade inga recept</h1>
+=======
+<<<<<<< HEAD
+          <h1 className="infotext">Hittade inga recept</h1>
+=======
+          <p className="infotext">Hittade inga recept</p>
+>>>>>>> f938a51 (Navigation Added)
+>>>>>>> 9f4dbb1 (NavigationAdded)
+>>>>>>> e0b40db (NavigationAdded)
         )}
         <button
           className={filteredRecipes.length > 10 ? 'button' : 'hidden'}

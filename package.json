@@ -14,7 +14,19 @@
     "react-dom": "^18.2.0",
     "react-router": "^6.9.0",
     "react-router-dom": "^6.9.0",
+<<<<<<< HEAD
     "react-scripts": "5.0.1",
+=======
+<<<<<<< HEAD
+    "react-scripts": "5.0.1",
+=======
+<<<<<<< HEAD
+    "react-scripts": "5.0.1",
+=======
+    "react-scripts": "^5.0.1",
+>>>>>>> f938a51 (Navigation Added)
+>>>>>>> 9f4dbb1 (NavigationAdded)
+>>>>>>> e0b40db (NavigationAdded)
     "web-vitals": "^2.1.4"
   },
   "scripts": {

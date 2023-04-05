@@ -54,6 +54,31 @@ body {
   color: var(--gray-color);
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+.fooddrink{
+  height: 60%;
+  width: 20%;
+  border-radius: 10px;
+  margin:10px;
+  position: relative;
+}
+
+.drink{
+  height: 60%;
+  width: 20%;
+  border-radius: 10px;
+  margin:20px;
+  position: relative;
+}
+
+>>>>>>> f938a51 (Navigation Added)
+>>>>>>> 9f4dbb1 (NavigationAdded)
+>>>>>>> e0b40db (NavigationAdded)
 .button {
   background-color: lightgray; /* Green */
   border: none;

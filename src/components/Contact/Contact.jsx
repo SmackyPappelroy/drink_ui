@@ -1,30 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 9f4dbb1 (NavigationAdded)
->>>>>>> e0b40db (NavigationAdded)
-import PageHeader from "../PageHeader/pageHeader";
-import useNavbarDisplay from "../Navbar/CustomHooks/useNavbarDisplay";
-
-const About = () => {
-const isMobile = useNavbarDisplay();
-return(
-<div>
-{isMobile ? (<h2>About</h2>) : (<> <PageHeader iconSize="3x" titleSize="50px"/> <h2>About</h2> </>)}
-</div>
-)
-
-}
-<<<<<<< HEAD
-export default About;
-=======
-<<<<<<< HEAD
-export default About;
-=======
-export default About;
-=======
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../../context'
 import '../Card.css'
@@ -35,10 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
 import FilterButtons from '../Buttons/Filterbuttons'
 import filters from '../Buttons/Filters'
-import friesbeer from '../../fries&beer.gif'
-import chickenbeer from '../../chickenandbeer.gif'
-import pouringbeer from '../../pouringbeer.gif'
-import salmonwine from '../../salmonwine.gif'
+import cheerschampagne from '../../cheerschampagne.gif'
+import cheersbeer from '../../cheersbeer.gif'
+import cheerswine from '../../cheerswine.gif'
 
 function Contact() {
   // Go to this page when you click on the dishes button in the navbar
@@ -135,29 +107,31 @@ function Contact() {
           <h2 className="fine-dine">
             <div className="title-gray">FineDine</div>
             <FontAwesomeIcon icon={Icon.faDrumstickBite} />
-            <FontAwesomeIcon icon={Icon.faChampagneGlasses} /> About
+            <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
+            Contact
           </h2>
         </div>
 
         {!filteredRecipes || filteredRecipes.length > 0 ? (
           filteredRecipes.slice(start, end).map((recipe) => {
-            return (<SimpleDishCard
+            return (
+              <SimpleDishCard
                 key={recipe.id}
                 className="simpleDishCard"
                 image={recipe.image}
                 title={recipe.title}
-                id={recipe.id}/>)})
+                id={recipe.id}
+              />
+            )
+          })
         ) : (
           <div className="infotext">
-            <p>Our idea is try to find best combonation of dishes that fit well to certain drinks.
-          wine with steak, chicken. </p>
-            <p> Some special dishes that fit well to certain drink.</p>
+            <p>Contact us for more information about the best pairing for dishes and drinks. </p>
             <br></br>
-            <img src={friesbeer} alt="my-gif" className='fooddrink'/>
-            <img src={chickenbeer} alt="my-gif" className='fooddrink'/>
-            <img src={salmonwine} alt="my-gif" className='fooddrink'/>
-            <img src={pouringbeer} alt="my-gif" className='fooddrink'/>
-        </div>
+            <img src={cheersbeer} alt="my-gif" className='drink'/>
+            <img src={cheerswine} alt="my-gif" className='drink'/>
+            <img src={cheerschampagne} alt="my-gif" className='drink'/>
+          </div>
         )}
         <button
           className={filteredRecipes.length > 10 ? 'button' : 'hidden'}
@@ -197,6 +171,3 @@ function Contact() {
 }
 
 export default Contact
->>>>>>> f938a51 (Navigation Added)
->>>>>>> 9f4dbb1 (NavigationAdded)
->>>>>>> e0b40db (NavigationAdded)

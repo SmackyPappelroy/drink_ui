@@ -1,33 +1,9 @@
-<<<<<<< HEAD
-.dishes {
-=======
-<<<<<<< HEAD
-.dishes {
-=======
-<<<<<<< HEAD
-.dishes {
-=======
-/* .dishes {
->>>>>>> f938a51 (Navigation Added)
->>>>>>> 9f4dbb1 (NavigationAdded)
->>>>>>> e0b40db (NavigationAdded)
+.drink {
   position: absolute;
   padding: 20px;
   margin-top: 1%;
   margin-bottom: 2%;
-<<<<<<< HEAD
   width: 90%;
-=======
-<<<<<<< HEAD
-  width: 90%;
-=======
-<<<<<<< HEAD
-  width: 90%;
-=======
-  width: 70%;
->>>>>>> f938a51 (Navigation Added)
->>>>>>> 9f4dbb1 (NavigationAdded)
->>>>>>> e0b40db (NavigationAdded)
   height: auto;
   left: 10%;
   display: flex;
@@ -36,18 +12,8 @@
   justify-content: space-between;
   background-color: white;
   border-radius: 20px;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-  height: 95%;
->>>>>>> f938a51 (Navigation Added)
->>>>>>> 9f4dbb1 (NavigationAdded)
->>>>>>> e0b40db (NavigationAdded)
 }
-.dishes-mobile {
+.drink-mobile {
   position: absolute;
   padding: 20px;
   margin-top: 1%;
@@ -63,7 +29,7 @@
   background-color: white;
   border-radius: 20px;
 }
-.dishesTitle {
+.drinkTitle {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -109,27 +75,9 @@
 .hidden {
   display: none;
 }
-<<<<<<< HEAD
 .infotext {
   /* display center screen */
   width: auto;
-=======
-<<<<<<< HEAD
-.infotext {
-  /* display center screen */
-  width: auto;
-=======
-<<<<<<< HEAD
-.infotext {
-  /* display center screen */
-  width: auto;
-=======
-.infotext { */
-  /* display center screen */
-  /* width: auto;
->>>>>>> f938a51 (Navigation Added)
->>>>>>> 9f4dbb1 (NavigationAdded)
->>>>>>> e0b40db (NavigationAdded)
   height: auto;
   font-weight: 400;
   top: 30%;
@@ -171,16 +119,5 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-<<<<<<< HEAD
 }
-=======
-<<<<<<< HEAD
-}
-=======
-<<<<<<< HEAD
-}
-=======
-} */
->>>>>>> f938a51 (Navigation Added)
->>>>>>> 9f4dbb1 (NavigationAdded)
->>>>>>> e0b40db (NavigationAdded)
+
