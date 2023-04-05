@@ -1,9 +1,9 @@
-.meal {
+.card {
     position: absolute;
     padding: 20px;
     margin-top: 1%;
     margin-bottom: 2%;
-    width: 90%;
+    width: 77%;
     height: auto;
     left: 10%;
     display: flex;
@@ -12,8 +12,9 @@
     justify-content: space-between;
     background-color: white;
     border-radius: 20px;
+    height: 95%;
   }
-  .meal-mobile {
+  .card-mobile {
     position: absolute;
     padding: 20px;
     margin-top: 1%;
@@ -29,7 +30,7 @@
     background-color: white;
     border-radius: 20px;
   }
-  .mealTitle {
+  .cardTitle {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
@@ -53,6 +54,7 @@
   }
   
   .icons {
+    size: 10px;
     grid-row: 1;
     gap: 2px;
     grid-column: 2;
@@ -80,8 +82,16 @@
     width: auto;
     height: auto;
     font-weight: 400;
+    padding-bottom: 90%;
     top: 30%;
     left: 40%;
+    color: red;
+  }
+
+  .title{
+    font-weight: 400;
+    display: flex;
+    justify-content: right;
     color: red;
   }
   
@@ -120,3 +130,4 @@
     align-items: center;
     flex-direction: column;
   }
+  
