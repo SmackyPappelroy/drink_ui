@@ -55,7 +55,7 @@ function Dishes() {
       if (veryHealthy && !recipe.veryHealthy) return false
       return true
     })
-    console.log(filtered.length)
+    console.log(filtered)
     setFilteredRecipes(filtered.length > 0 ? filtered : [])
   }
 
@@ -92,7 +92,7 @@ function Dishes() {
   }
 
   if (loading) {
-    return <h1 className="infotext"></h1>
+    return <h1 className="infotext">Laddar...</h1>
   } else {
     console.log(filteredRecipes.length)
     return (
