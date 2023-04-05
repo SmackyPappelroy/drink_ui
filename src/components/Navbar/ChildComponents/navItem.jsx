@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
-import useCollapse from "../CustomHooks/useCollapse";
-import { useCallback } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as Icon from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom'
+import useCollapse from '../CustomHooks/useCollapse'
+import { useCallback } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import * as Icon from '@fortawesome/free-solid-svg-icons'
+
 
 const NavItem = ({href, text = "",  onClick, icon}) => {
        icon = icon || Icon.faAngleDoubleRight
@@ -14,4 +15,4 @@ const NavItem = ({href, text = "",  onClick, icon}) => {
         </li>  
      )
 }
-export default NavItem;
+export default NavItem

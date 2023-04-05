@@ -6,4 +6,4 @@ const NavList = ({children}) => {
        </ul>
        )
 }
-export default NavList;
+export default NavList
