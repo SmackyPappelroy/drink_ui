@@ -5,6 +5,8 @@ import '../../App.css'
 import SimpleDishCard from '../SimpleDishCard/SimpleDishCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
+import FilterButtons from '../Buttons/Filterbuttons'
+import filters from '../Buttons/Filters'
 
 function Dishes() {
   // Go to this page when you click on the dishes button in the navbar
@@ -19,12 +21,6 @@ function Dishes() {
   const [ketogenic, setKetogenic] = React.useState(false)
   const [vegetarian, setVegetarian] = React.useState(false)
   const [veryHealthy, setVeryHealthy] = React.useState(false)
-  const [veganRecipes, setVeganRecipes] = React.useState([])
-  const [dairyFreeRecipes, setDairyFreeRecipes] = React.useState([])
-  const [glutenFreeRecipes, setGlutenFreeRecipes] = React.useState([])
-  const [ketogenicRecipes, setKetogenicRecipes] = React.useState([])
-  const [vegetarianRecipes, setVegetarianRecipes] = React.useState([])
-  const [veryHealthyRecipes, setVeryHealthyRecipes] = React.useState([])
 
   useEffect(() => {
     setFilteredRecipes(recipes)
@@ -52,93 +48,41 @@ function Dishes() {
   }
 
   const updateFilteredRecipes = async () => {
-    if (
-      !vegan &&
-      !dairyFree &&
-      !glutenFree &&
-      !ketogenic &&
-      !vegetarian &&
-      !veryHealthy
-    ) {
-      setFilteredRecipes(recipes)
-      console.log('test2')
-      return
-    }
-    if (vegan) {
-      setVeganRecipes(recipes.filter((recipe) => recipe.vegan === true))
-    } else {
-      setVeganRecipes([])
-    }
-    if (dairyFree) {
-      setDairyFreeRecipes(recipes.filter((recipe) => recipe.dairyFree === true))
-    } else {
-      setDairyFreeRecipes([])
-    }
-    if (glutenFree) {
-      setGlutenFreeRecipes(
-        recipes.filter((recipe) => recipe.glutenFree === true)
-      )
-    } else {
-      setGlutenFreeRecipes([])
-    }
-    if (ketogenic) {
-      setKetogenicRecipes(recipes.filter((recipe) => recipe.ketogenic === true))
-    } else {
-      setKetogenicRecipes([])
-    }
-    if (vegetarian) {
-      setVegetarianRecipes(
-        recipes.filter((recipe) => recipe.vegetarian === true)
-      )
-    } else {
-      setVegetarianRecipes([])
-    }
-    if (veryHealthy) {
-      setVeryHealthyRecipes(
-        recipes.filter((recipe) => recipe.veryHealthy === true)
-      )
-    } else {
-      setVeryHealthyRecipes([])
-    }
+    const filtered = recipes.filter((recipe) => {
+      if (vegan && !recipe.vegan) return false
+      if (dairyFree && !recipe.dairyFree) return false
+      if (glutenFree && !recipe.glutenFree) return false
+      if (ketogenic && !recipe.ketogenic) return false
+      if (vegetarian && !recipe.vegetarian) return false
+      if (veryHealthy && !recipe.veryHealthy) return false
+      return true
+    })
 
-    let filtered = [
-      ...veganRecipes,
-      ...dairyFreeRecipes,
-      ...glutenFreeRecipes,
-      ...ketogenicRecipes,
-      ...vegetarianRecipes,
-      ...veryHealthyRecipes,
-    ]
-
-    if (filtered.length === 0) {
-      setFilteredRecipes(recipes)
-    } else {
-      setFilteredRecipes(filtered)
-    }
-    console.log(filtered.length)
+    setFilteredRecipes(filtered.length > 0 ? filtered : recipes)
   }
 
   const filterFood = (filter) => {
-    console.log(filter)
-    if (filter === 'vegan') {
-      console.log(vegan)
-      setVegan(!vegan)
-      console.log(vegan)
-    }
-    if (filter === 'dairyFree') {
-      setDairyFree(!dairyFree)
-    }
-    if (filter === 'glutenFree') {
-      setGlutenFree(!glutenFree)
-    }
-    if (filter === 'ketogenic') {
-      setKetogenic(!ketogenic)
-    }
-    if (filter === 'vegetarian') {
-      setVegetarian(!vegetarian)
-    }
-    if (filter === 'veryHealthy') {
-      setVeryHealthy(!veryHealthy)
+    switch (filter) {
+      case 'vegan':
+        setVegan((prev) => !prev)
+        break
+      case 'dairyFree':
+        setDairyFree((prev) => !prev)
+        break
+      case 'glutenFree':
+        setGlutenFree((prev) => !prev)
+        break
+      case 'ketogenic':
+        setKetogenic((prev) => !prev)
+        break
+      case 'vegetarian':
+        setVegetarian((prev) => !prev)
+        break
+      case 'veryHealthy':
+        setVeryHealthy((prev) => !prev)
+        break
+      default:
+        break
     }
   }
 
@@ -159,51 +103,22 @@ function Dishes() {
             <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
           </h2>
           <div className="icons">
-            <button
-              className={dairyFree ? 'icon-clicked' : 'icon-unclicked'}
-              onClick={() => filterFood('dairyFree')}
-            >
-              dairyFree
-            </button>
-
-            <button
-              className={glutenFree ? 'icon-clicked' : 'icon-unclicked'}
-              onClick={() => filterFood('glutenFree')}
-            >
-              glutenFree
-            </button>
-
-            <button
-              className={ketogenic ? 'icon-clicked' : 'icon-unclicked'}
-              onClick={() => filterFood('ketogenic')}
-            >
-              ketogenic
-            </button>
-
-            <button
-              className={vegetarian ? 'icon-clicked' : 'icon-unclicked'}
-              onClick={() => filterFood('vegetarian')}
-            >
-              vegetarian
-            </button>
-
-            {/* vegan */}
-            <FontAwesomeIcon
-              className={vegan ? 'icon-clicked' : 'icon-unclicked'}
-              onClick={() => filterFood('vegan')}
-              icon={Icon.faCarrot}
-            />
-            {/* veryHealthy */}
-            <FontAwesomeIcon
-              className={veryHealthy ? 'icon-clicked' : 'icon-unclicked'}
-              onClick={() => filterFood('veryHealthy')}
-              icon={Icon.faBowlFood}
+            <FilterButtons
+              filters={filters}
+              activeFilters={{
+                dairyFree,
+                glutenFree,
+                ketogenic,
+                vegetarian,
+                vegan,
+                veryHealthy,
+              }}
+              onFilterChange={filterFood}
             />
           </div>
         </div>
 
         {filteredRecipes.slice(start, end).map((recipe) => {
-          console.log(filteredRecipes)
           return (
             <SimpleDishCard
               key={recipe.id}
@@ -228,7 +143,6 @@ function Dishes() {
           </p>
           <div className="dots">
             {filteredRecipes.slice(start, end).map((recipe, index) => {
-              console.log(end)
               return (
                 <span
                   key={index}
