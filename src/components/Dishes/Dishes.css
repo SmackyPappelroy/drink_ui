@@ -75,6 +75,15 @@
 .hidden {
   display: none;
 }
+.infotext {
+  /* display center screen */
+  width: auto;
+  height: auto;
+  font-weight: 400;
+  top: 30%;
+  left: 40%;
+  color: red;
+}
 
 .dots {
   position: center;
