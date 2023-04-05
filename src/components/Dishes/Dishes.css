@@ -65,9 +65,11 @@
 
 .icon-clicked {
   color: #000000;
+  margin-right: 4px;
 }
 .icon-unclicked {
   color: #818181;
+  margin-right: 4px;
 }
 
 .hidden {

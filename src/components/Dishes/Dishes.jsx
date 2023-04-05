@@ -7,6 +7,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
 import FilterButtons from '../Buttons/Filterbuttons'
 import filters from '../Buttons/Filters'
+import {
+  faCheese,
+  faBreadSlice,
+  faBacon,
+  faCarrot,
+  faLeaf,
+  faHeart,
+} from '@fortawesome/free-solid-svg-icons'
 
 function Dishes() {
   // Go to this page when you click on the dishes button in the navbar
@@ -129,33 +137,36 @@ function Dishes() {
             />
           )
         })}
-        {/* Display the previous 10 recipes */}
-        <button className="button" onClick={() => decrement()}>
+        <button
+          className={filteredRecipes.length > 10 ? 'button' : 'hidden'}
+          onClick={() => decrement()}
+        >
           Previous
         </button>
 
-        {/* Display start and end in the middle */}
-
-        {/* Display a dot for each page, and highlight the current page */}
-        <div className="page">
+        <div className={filteredRecipes.length > 10 ? 'page' : 'hidden'}>
           <p>
             {start + 1} - {end} av {filteredRecipes.length}
           </p>
           <div className="dots">
-            {filteredRecipes.slice(start, end).map((recipe, index) => {
-              return (
-                <span
-                  key={index}
-                  onClick={() => changePage(index * 10)}
-                  className={index * 10 === start ? 'dot-active' : 'dot'}
-                ></span>
-              )
-            })}
+            {filteredRecipes.length > 10 &&
+              Array.from(
+                { length: Math.ceil(filteredRecipes.length / 10) },
+                (_, i) => (
+                  <span
+                    key={i}
+                    onClick={() => changePage(i * 10)}
+                    className={i * 10 === start ? 'dot-active' : 'dot'}
+                  ></span>
+                )
+              )}
           </div>
         </div>
 
-        {/* Display the next 10 recipes */}
-        <button className="button" onClick={() => increment()}>
+        <button
+          className={filteredRecipes.length > 10 ? 'button' : 'hidden'}
+          onClick={() => increment()}
+        >
           Next
         </button>
       </div>
