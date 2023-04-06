@@ -3,6 +3,7 @@
        align-items: center;
        justify-content: flex-start;
        gap: .3em;
+       height: 10%;
 }
 
 .page-header h1 {
