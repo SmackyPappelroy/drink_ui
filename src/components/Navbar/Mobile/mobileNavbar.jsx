@@ -1,17 +1,17 @@
 // MobileNav.jsx
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as Icon from "@fortawesome/free-solid-svg-icons";
-import "./mobileNavbar.css";
-import PageHeader from "../../PageHeader/pageHeader";
-import NavList from "../ChildComponents/navList";
-import NavItem from "../ChildComponents/navItem";
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import * as Icon from '@fortawesome/free-solid-svg-icons'
+import './mobileNavbar.css'
+import PageHeader from '../../PageHeader/pageHeader'
+import NavList from '../ChildComponents/navList'
+import NavItem from '../ChildComponents/navItem'
 
 function MobileNav({ isCollapsed, toggleCollapse, setToCollapse }) {
   return (
     <nav
       className={`mobile navbar${
-        isCollapsed ? " collapsed" : ""
+        isCollapsed ? ' collapsed' : ''
       } navbar-mobile`}
     >
       <div className="navbar-header">
@@ -20,7 +20,7 @@ function MobileNav({ isCollapsed, toggleCollapse, setToCollapse }) {
             icon={isCollapsed ? Icon.faAngleDoubleDown : Icon.faAngleDoubleUp}
           />
         </button>
-        <PageHeader iconSize={"3x"} />
+        <PageHeader iconSize={'3x'} />
       </div>
       {!isCollapsed && (
         <NavList>
@@ -55,15 +55,15 @@ function MobileNav({ isCollapsed, toggleCollapse, setToCollapse }) {
             icon={Icon.faInfo}
           />
           <NavItem
-            href="/about"
-            text="About"
+            href="/contact"
+            text="Contact"
             onClick={setToCollapse}
             icon={Icon.faAddressCard}
           />
         </NavList>
       )}
     </nav>
-  );
+  )
 }
 
-export default MobileNav;
+export default MobileNav
