@@ -8,34 +8,40 @@ import cheersbeer from './cheersbeer.gif'
 import cheerswine from './cheerswine.gif'
 
 const Contact = () => {
-    const isMobile = useNavbarDisplay()
-    return (
-      
-      <div className={isMobile ? 'card-mobile' : 'card'}>
-        {isMobile ? (<>
+  const isMobile = useNavbarDisplay()
+  return (
+    <div className={isMobile ? 'card-mobile' : 'card'}>
+      {isMobile ? (
+        <>
           <h2>Contact</h2>
-            <div className="infotext">
-            <p>Contact us for more information about the best pairing for dishes and drinks. </p>
+          <div className="infotext">
+            <p>
+              Contact us for more information about the best pairing for dishes
+              and drinks.{' '}
+            </p>
             <br></br>
-              <img src={cheersbeer} alt="my-gif" className='drink'/>
-            <img src={cheerswine} alt="my-gif" className='drink'/>
-            <img src={cheerschampagne} alt="my-gif" className='drink'/>
-              </div>
-          </>
-        ) : (
-          <>
-            {' '}
-            <PageHeader iconSize="3x" titleSize="50px" /> <h2>Contact</h2>{' '}
-            <div className="infotext">
-            <p>Contact us for more information about the best pairing for dishes and drinks. </p>
+            <img src={cheersbeer} alt="my-gif" className="drink" />
+            <img src={cheerswine} alt="my-gif" className="drink" />
+            <img src={cheerschampagne} alt="my-gif" className="drink" />
+          </div>
+        </>
+      ) : (
+        <>
+          {' '}
+          <PageHeader iconSize="3x" titleSize="50px" /> <h2>Contact</h2>{' '}
+          <div className="infotext">
+            <p>
+              Contact us for more information about the best pairing for dishes
+              and drinks.{' '}
+            </p>
             <br></br>
-              <img src={cheersbeer} alt="my-gif" className='drink'/>
-            <img src={cheerswine} alt="my-gif" className='drink'/>
-            <img src={cheerschampagne} alt="my-gif" className='drink'/>
-              </div>
-          </>
-        )}
-      </div>
-    )
-  }
-  export default Contact
+            <img src={cheersbeer} alt="my-gif" className="drink" />
+            <img src={cheerswine} alt="my-gif" className="drink" />
+            <img src={cheerschampagne} alt="my-gif" className="drink" />
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
+export default Contact
