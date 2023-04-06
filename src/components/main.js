@@ -12,7 +12,7 @@ const Main = () => {
       <Route path="/info" element={<Information />} />
       <Route path="/Dishes" element={<Dishes />} />
       <Route path="/Dish/:id" element={<Dish />} />
-      <Route path="*" element={<h1>404: Not Found</h1>} />
+      <Route path="*" element={<h1 className="not-found">404: Not Found</h1>} />
     </Routes>
   )
 }
