@@ -15,7 +15,7 @@
     height: 95%;
   }
   .card-mobile {
-    position: absolute;
+    position: flex;
     padding: 20px;
     margin-top: 1%;
     margin-bottom: 2%;
@@ -136,7 +136,7 @@
     width: 20%;
     border-radius: 10px;
     margin:10px;
-    position: relative;
+    position: flex;
   }
   
   
@@ -145,6 +145,6 @@
   width: 20%;
   border-radius: 10px;
   margin:20px;
-  position: relative;
+  position: flex;
   align-items: center;
 }
