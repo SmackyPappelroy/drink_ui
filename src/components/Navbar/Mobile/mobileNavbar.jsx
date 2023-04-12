@@ -6,14 +6,11 @@ import "./mobileNavbar.css";
 import PageHeader from "../../PageHeader/pageHeader";
 import NavList from "../ChildComponents/navList";
 import NavItem from "../ChildComponents/navItem";
+import "../navbar.css";
 
 function MobileNav({ isCollapsed, toggleCollapse, setToCollapse }) {
   return (
-    <nav
-      className={`mobile navbar${
-        isCollapsed ? " collapsed" : ""
-      } navbar-mobile`}
-    >
+    <nav className={`mobile navbar${isCollapsed ? " collapsed" : ""}`}>
       <div className="navbar-header">
         <button className="navbar-toggler" onClick={toggleCollapse}>
           <FontAwesomeIcon

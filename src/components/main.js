@@ -3,8 +3,10 @@ import About from './About/about'
 import Home from './Home/home'
 import Dishes from './Dishes/Dishes'
 import Dish from './Dish/Dish'
+
 const Main = () => {
   return (
+
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />

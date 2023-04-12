@@ -1,0 +1,50 @@
+/* Common navbar styles */
+
+.navbar {
+       z-index: 666;
+}
+
+.navbar-toggler {
+       cursor: pointer;
+       color: #151515e5;
+       padding: 5px 10px;
+       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:hover {
+       outline: none;
+       color: #007bff;
+}
+
+.navbar-nav {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       list-style: none;
+       gap: 1em;
+       padding: 20px;
+       margin-top: 10px;
+}
+
+.collapsed .navbar-nav {
+       gap: 1.2em;
+       margin-top: 15px;
+}
+
+.nav-item {
+       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+       width: 100%;
+       margin-bottom: 5px;
+}
+
+.navbar.collapsed .nav-item {
+       border-bottom: none !important;
+       width: auto !important;
+}
+
+.nav-link {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+}

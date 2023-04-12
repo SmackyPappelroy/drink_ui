@@ -5,7 +5,7 @@ const About = () => {
 const isMobile = useNavbarDisplay();
 return(
 <div>
-{isMobile ? (<h2>About</h2>) : (<> <PageHeader iconSize="3x" titleSize="50px"/> <h2>About</h2> </>)}
+<h1>About</h1>
 </div>
 )
 
