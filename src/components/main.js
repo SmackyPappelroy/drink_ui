@@ -3,7 +3,8 @@ import Information from './Information/information'
 import Home from './Home/home'
 import Dishes from './Dishes/Dishes'
 import Dish from './Dish/Dish'
-import Contact from './Contact/Contact'
+import Contact from './Contact/contact'
+import Drinks from './Drinks/Drinks'
 const Main = () => {
   return (
     <Routes>
@@ -12,6 +13,7 @@ const Main = () => {
       <Route path="/info" element={<Information />} />
       <Route path="/Dishes" element={<Dishes />} />
       <Route path="/Dish/:id" element={<Dish />} />
+      <Route path="/drinks" element={<Drinks />} />
       <Route path="*" element={<h1 className="not-found">404: Not Found</h1>} />
     </Routes>
   )
