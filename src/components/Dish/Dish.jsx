@@ -30,13 +30,13 @@ const Dish = () => {
 
   return (
     <div className={isMobileSize ? 'dish-mobile' : 'dish'}>
-      <div className="dish-title">
+      <h1 className="dish-title">
         <h2 className="fine-dine">
           <div className="title-gray">FineDine</div>
           <FontAwesomeIcon icon={Icon.faDrumstickBite} />
           <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
         </h2>
-      </div>
+      </h1>
       <div className="dish-info">
         <h1 className="dish-name">{myRecipe.title}</h1>
       </div>
@@ -53,6 +53,20 @@ const Dish = () => {
           <p>Hittade inga ingredienser.</p>
         )}
       </div>
+      <div className="instructions">
+        <h3>Instruktioner</h3>
+        {/* Create bullet points from the instructions */}
+        {myRecipe.instructions &&
+          myRecipe.instructions.split('.').map((instruction, index) => {
+            return (
+              <div key={index}>
+                <FontAwesomeIcon icon={Icon.faChevronRight} />
+                <span className="instruction">{instruction}</span>
+              </div>
+            )
+          })}
+      </div>
+
       <h2 className="drink-headline">Rekommenderad dryck</h2>
       <div className="drinks">
         {myRecipe.drinks
