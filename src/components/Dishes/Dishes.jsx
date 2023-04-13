@@ -9,8 +9,6 @@ import FilterButtons from '../Buttons/Filterbuttons'
 import filters from '../Buttons/Filters'
 
 function Dishes() {
-  // Go to this page when you click on the dishes button in the navbar
-
   const { recipes, loading, isMobileSize } = useGlobalContext()
   const [start, setStart] = React.useState(0)
   const [end, setEnd] = React.useState(10)
@@ -57,7 +55,7 @@ function Dishes() {
       if (veryHealthy && !recipe.veryHealthy) return false
       return true
     })
-    console.log(filtered.length)
+    console.log(filtered)
     setFilteredRecipes(filtered.length > 0 ? filtered : [])
   }
 
@@ -94,7 +92,7 @@ function Dishes() {
   }
 
   if (loading) {
-    return <h1 className="infotext"></h1>
+    return <h1 className="infotext">Laddar...</h1>
   } else {
     console.log(filteredRecipes.length)
     return (
