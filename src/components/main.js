@@ -3,7 +3,7 @@ import Information from './Information/information'
 import Home from './Home/home'
 import Dishes from './Dishes/Dishes'
 import Dish from './Dish/Dish'
-import Contact from './Contact/Contact'
+import Contact from './Contact/contact'
 const Main = () => {
   return (
     <Routes>
