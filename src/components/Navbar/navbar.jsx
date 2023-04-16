@@ -1,12 +1,12 @@
-import React from "react";
-import useNavbarDisplay from "./CustomHooks/useNavbarDisplay";
-import MobileNav from "./Mobile/mobileNavbar";
-import DesktopNav from "./Desktop/desktopNavbar";
-import useCollapse from "./CustomHooks/useCollapse";
+import React from 'react'
+import useNavbarDisplay from './CustomHooks/useNavbarDisplay'
+import MobileNav from './Mobile/mobileNavbar'
+import DesktopNav from './Desktop/desktopNavbar'
+import useCollapse from './CustomHooks/useCollapse'
 
 function Navbar() {
-  const isMobile = useNavbarDisplay();
-  const { isCollapsed, toggleCollapse, setToCollapse } = useCollapse();
+  const isMobile = useNavbarDisplay()
+  const { isCollapsed, toggleCollapse, setToCollapse } = useCollapse()
   return (
     <>
       {isMobile ? (
@@ -23,7 +23,7 @@ function Navbar() {
         />
       )}
     </>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

@@ -1,16 +1,16 @@
 // DesktopNav.jsx
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as Icon from "@fortawesome/free-solid-svg-icons";
-import "./desktopNavbar.css";
-import "../navbar.css";
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import * as Icon from '@fortawesome/free-solid-svg-icons'
+import './desktopNavbar.css'
+import '../navbar.css'
 
-import NavList from "../ChildComponents/navList";
-import NavItem from "../ChildComponents/navItem";
-import PageHeader from "../../PageHeader/pageHeader";
+import NavList from '../ChildComponents/navList'
+import NavItem from '../ChildComponents/navItem'
+import PageHeader from '../../PageHeader/pageHeader'
 function DesktopNav({ isCollapsed, toggleCollapse, setToCollapse }) {
   return (
-    <nav className={`desktop navbar${isCollapsed ? " collapsed" : ""}`}>
+    <nav className={`desktop navbar${isCollapsed ? ' collapsed' : ''}`}>
       {isCollapsed ? (
         <>
           <button className="navbar-toggler" onClick={toggleCollapse}>
@@ -39,7 +39,7 @@ function DesktopNav({ isCollapsed, toggleCollapse, setToCollapse }) {
             />
             <NavItem href="/info" icon={Icon.faInfo} onClick={setToCollapse} />
             <NavItem
-              href="/about"
+              href="/contact"
               icon={Icon.faAddressCard}
               onClick={setToCollapse}
             />
@@ -50,7 +50,7 @@ function DesktopNav({ isCollapsed, toggleCollapse, setToCollapse }) {
           <div className="navbar-header">
             <PageHeader
               titleSize="1.3rem"
-              iconSize={"1x"}
+              iconSize={'1x'}
               titleColor="#151515e5"
             />
             <button className="navbar-toggler" onClick={toggleCollapse}>
@@ -71,12 +71,12 @@ function DesktopNav({ isCollapsed, toggleCollapse, setToCollapse }) {
               onClick={setToCollapse}
             />
             <NavItem href="/info" text="Information" onClick={setToCollapse} />
-            <NavItem href="/about" text="About" onClick={setToCollapse} />
+            <NavItem href="/contact" text="Contact" onClick={setToCollapse} />
           </NavList>
         </>
       )}
     </nav>
-  );
+  )
 }
 
-export default DesktopNav;
+export default DesktopNav
