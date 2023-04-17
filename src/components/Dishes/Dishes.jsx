@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
 import FilterButtons from '../Buttons/Filterbuttons'
 import filters from '../Buttons/Filters'
+import PageHeader from '../PageHeader/pageHeader'
 
 function Dishes() {
   // Go to this page when you click on the dishes button in the navbar
@@ -94,7 +95,7 @@ function Dishes() {
   }
 
   if (loading) {
-    return <h1 className="infotext"></h1>
+    return <h1 className="infotext">Laddar...</h1>
   } else {
     console.log(filteredRecipes.length)
     return (
