@@ -23,6 +23,23 @@ function Dishes() {
   const [vegetarian, setVegetarian] = React.useState(false)
   const [veryHealthy, setVeryHealthy] = React.useState(false)
 
+  const [searchTerm, setSearchTerm] = React.useState('')
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value)
+    performSearch(e.target.value)
+  }
+
+  const performSearch = (query) => {
+    const filtered = recipes.filter((recipe) => {
+      if (recipe.title.toLowerCase().includes(query.toLowerCase())) {
+        return true
+      }
+      return false
+    })
+    setFilteredRecipes(filtered)
+  }
+
   useEffect(() => {
     setFilteredRecipes(recipes)
   }, [recipes])
@@ -56,6 +73,11 @@ function Dishes() {
       if (ketogenic && !recipe.ketogenic) return false
       if (vegetarian && !recipe.vegetarian) return false
       if (veryHealthy && !recipe.veryHealthy) return false
+      if (
+        searchTerm &&
+        !recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+        return false
       return true
     })
     console.log(filtered.length)
@@ -106,6 +128,13 @@ function Dishes() {
             <FontAwesomeIcon icon={Icon.faDrumstickBite} />
             <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
           </h2>
+          <form className="search" onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="text"
+              placeholder="Sök..."
+              onChange={handleSearchChange}
+            />
+          </form>
           <div className="icons">
             <FilterButtons
               filters={filters}
