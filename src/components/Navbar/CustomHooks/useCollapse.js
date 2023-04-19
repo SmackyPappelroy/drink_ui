@@ -1,9 +1,8 @@
-import { useEffect, useMemo } from "react";
-import { useCallback, useState } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const useCollapse = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
-  console.log(isCollapsed)
   useEffect(() => {
     const storedState = localStorage.getItem('navbarState_isCollapsed');
     if (storedState !== null) {
@@ -17,7 +16,6 @@ const useCollapse = () => {
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
-    console.log(isCollapsed)
     setIsCollpasedToLS();
   };
   const setToCollapse = () => {
@@ -25,7 +23,6 @@ const useCollapse = () => {
     setIsCollpasedToLS();
   };
 
-  console.log({ isCollapsed, toggleCollapse })
   return { isCollapsed, toggleCollapse, setToCollapse };
 };
 export default useCollapse;

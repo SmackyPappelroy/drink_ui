@@ -7,8 +7,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
 import FilterButtons from '../Buttons/Filterbuttons'
 import filters from '../Buttons/Filters'
+import PageHeader from '../PageHeader/pageHeader'
 
 function Dishes() {
+  // Go to this page when you click on the dishes button in the navbar
+
   const { recipes, loading, isMobileSize } = useGlobalContext()
   const [start, setStart] = React.useState(0)
   const [end, setEnd] = React.useState(10)
@@ -55,7 +58,7 @@ function Dishes() {
       if (veryHealthy && !recipe.veryHealthy) return false
       return true
     })
-    console.log(filtered)
+    console.log(filtered.length)
     setFilteredRecipes(filtered.length > 0 ? filtered : [])
   }
 
