@@ -33,7 +33,7 @@ function DesktopNav({ isCollapsed, toggleCollapse, setToCollapse }) {
               onClick={setToCollapse}
             />
             <NavItem
-              href="/best-combos"
+              href="/meals"
               icon={Icon.faChampagneGlasses}
               onClick={setToCollapse}
             />
@@ -66,8 +66,8 @@ function DesktopNav({ isCollapsed, toggleCollapse, setToCollapse }) {
             <NavItem href="/dishes" onClick={setToCollapse} text="Dishes" />
             <NavItem href="/drinks" text="Drinks" onClick={setToCollapse} />
             <NavItem
-              href="/best-combos"
-              text="Best Combos"
+              href="/meals"
+              text="Meals"
               onClick={setToCollapse}
             />
             <NavItem href="/info" text="Information" onClick={setToCollapse} />

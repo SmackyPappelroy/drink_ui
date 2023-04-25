@@ -6,6 +6,9 @@ import {
   faCarrot,
   faLeaf,
   faHeart,
+  faCoffee,
+  faGlassWater,
+  faWineGlass,
 } from '@fortawesome/free-solid-svg-icons'
 
 const filters = [
@@ -16,4 +19,5 @@ const filters = [
   { name: 'vegan', icon: faLeaf },
   { name: 'veryHealthy', icon: faHeart },
 ]
+
 export default filters
