@@ -145,6 +145,14 @@
   position: flex;
 }
 
+.mobilefooddrink{
+  height: 35%;
+  width: 20%;
+  border-radius: 10px;
+  margin:12% 2.5%;
+  position: flex;
+}
+
 
 .drink{
 height: 60%;
@@ -154,3 +162,12 @@ margin:20px;
 position: flex;
 align-items: center;
 }
+
+.mobiledrink{
+  height: 45%;
+  width: 25%;
+  border-radius: 10px;
+  margin:10% 4%;
+  position: flex;
+  align-items: center;
+  }
