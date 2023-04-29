@@ -1,26 +1,25 @@
 .card {
-    position: absolute;
-    padding: 20px;
-    margin-top: 1%;
-    margin-bottom: 2%;
-    width: 77%;
-    height: auto;
+    position: fixed;
+    padding: 30px;
+    bottom: 7%;
+    width: 50%;
     left: 10%;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     justify-content: space-between;
     background-color: white;
     border-radius: 20px;
-    height: 95%;
+    height: 80%;
   }
+  
   .card-mobile {
-    position: flex;
+    position: fixed;
     padding: 20px;
     margin-top: 1%;
     margin-bottom: 2%;
     margin-left: 5px;
-    height: auto;
+    height: 80%;
     width: 98%;
     left: 0%;
     display: flex;

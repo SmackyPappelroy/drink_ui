@@ -50,7 +50,6 @@ ul {
   background-attachment: fixed; */
   /* background-size: cover; */
   /* background-position: center; */
-  height: 100vh;
 }
 
 /* Smartphone */
@@ -58,7 +57,6 @@ ul {
   h1 {
     font-weight: 400;
     font-size: 50px;
-    line-height: 62px;
     text-transform: capitalize;
   }
 }
@@ -68,7 +66,6 @@ ul {
   h1 {
     font-weight: 400;
     font-size: 100px;
-    line-height: 125px;
     text-transform: capitalize;
   }
 
