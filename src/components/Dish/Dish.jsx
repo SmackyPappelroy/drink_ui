@@ -9,15 +9,30 @@ const findRecipeById = (recipes, id) => {
   return recipes.find((recipe) => recipe.id === parseInt(id))
 }
 
+const fetchDrinkFromRecipeApi = async (id) => {
+  const url = `https://localhost:7001/get-dish/${id}`
+  const response = await fetch(url)
+  const data = await response.json()
+  console.log(data)
+
+  return data
+}
+
 const Dish = () => {
   const [myRecipe, setMyRecipe] = React.useState(null)
+  const [drinks, setDrinks] = React.useState([])
   const id = window.location.pathname.split('/')[2]
   const { recipes, loading, isMobileSize } = useGlobalContext()
 
   useEffect(() => {
-    const recipe = findRecipeById(recipes, id)
-    console.log(recipe)
-    setMyRecipe(recipe)
+    const fetchData = async () => {
+      const recipe = findRecipeById(recipes, id)
+      const myDrinks = await fetchDrinkFromRecipeApi(id)
+      setDrinks(myDrinks)
+      setMyRecipe(recipe)
+      console.log(drinks)
+    }
+    fetchData()
   }, [id, recipes])
 
   if (loading || !recipes || !recipes.length || !id || !myRecipe) {
@@ -44,15 +59,16 @@ const Dish = () => {
       <div className="dish-ingredients">
         <h3>Ingredienser</h3>
         {myRecipe.ingredients ? (
-          <div>
-            {myRecipe.ingredients.length > 800
-              ? myRecipe.ingredients.substring(0, 800) + '...'
-              : myRecipe.ingredients}
-          </div>
+          <ul>
+            {myRecipe.ingredients.split('*').map((ingredient, index) => (
+              <li key={index}>{ingredient.trim()}</li>
+            ))}
+          </ul>
         ) : (
           <p>Hittade inga ingredienser.</p>
         )}
       </div>
+
       <div className="dish-instructions">
         <h3>Instruktioner</h3>
         {myRecipe.instructions ? (
@@ -68,11 +84,10 @@ const Dish = () => {
           <p>Hittade inga instruktioner.</p>
         )}
       </div>
-
       <h2 className="drink-headline">Rekommenderad dryck</h2>
       <div className="drinks">
-        {myRecipe.drinks
-          ? myRecipe.drinks.map((drink, index) => {
+        {drinks.drinks
+          ? drinks.drinks.map((drink, index) => {
               return (
                 <div className="drink" key={index}>
                   <img
