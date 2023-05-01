@@ -1,0 +1,17 @@
+.images-container {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       align-items: center;
+}
+
+.images-container img {
+       flex-basis: calc(33.33% - 20px);
+       margin: 10px;
+       height: auto;
+       object-fit: fill;
+       min-width: 150px;
+       height: 200px;
+       max-width: 150px;
+
+}
