@@ -20,9 +20,9 @@ const Contact = () => {
               and drinks.{' '}
             </p>
             <br></br>
-            <img src={cheersbeer} alt="my-gif" className="drink" />
-            <img src={cheerswine} alt="my-gif" className="drink" />
-            <img src={cheerschampagne} alt="my-gif" className="drink" />
+            <img src={cheersbeer} alt="my-gif" className="mobiledrink" />
+            <img src={cheerswine} alt="my-gif" className="mobiledrink" />
+            <img src={cheerschampagne} alt="my-gif" className="mobiledrink" />
           </div>
         </>
       ) : (

@@ -22,10 +22,10 @@ const Information = () => {
             </p>
             <p> Some special dishes that fit well to certain drink.</p>
             <br></br>
-            <img src={friesbeer} alt="my-gif" className="fooddrink" />
-            <img src={chickenbeer} alt="my-gif" className="fooddrink" />
-            <img src={salmonwine} alt="my-gif" className="fooddrink" />
-            <img src={pouringbeer} alt="my-gif" className="fooddrink" />
+            <img src={friesbeer} alt="my-gif" className="mobilefooddrink" />
+            <img src={chickenbeer} alt="my-gif" className="mobilefooddrink" />
+            <img src={salmonwine} alt="my-gif" className="mobilefooddrink" />
+            <img src={pouringbeer} alt="my-gif" className="mobilefooddrink" />
           </div>
         </>
       ) : (
