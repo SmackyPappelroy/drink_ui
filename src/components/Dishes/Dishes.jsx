@@ -135,7 +135,7 @@ function Dishes() {
               onChange={handleSearchChange}
             />
           </form>
-          <div className="icons">
+          <div className="iconContainer">
             <FilterButtons
               filters={filters}
               activeFilters={{
@@ -164,7 +164,7 @@ function Dishes() {
             )
           })
         ) : (
-          <h1 className="infotext">Hittade inga recept</h1>
+          <h1 className="dishinfotext">Hittade inga recept</h1>
         )}
         <button
           className={filteredRecipes.length > 10 ? 'button' : 'hidden'}

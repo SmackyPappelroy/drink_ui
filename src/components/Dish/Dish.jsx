@@ -45,14 +45,30 @@ const Dish = () => {
         <h3>Ingredienser</h3>
         {myRecipe.ingredients ? (
           <div>
-            {myRecipe.ingredients.length > 300
-              ? myRecipe.ingredients.substring(0, 30) + '...'
+            {myRecipe.ingredients.length > 800
+              ? myRecipe.ingredients.substring(0, 800) + '...'
               : myRecipe.ingredients}
           </div>
         ) : (
           <p>Hittade inga ingredienser.</p>
         )}
       </div>
+      <div className="dish-instructions">
+        <h3>Instruktioner</h3>
+        {myRecipe.instructions ? (
+          <div
+            dangerouslySetInnerHTML={{
+              __html:
+                myRecipe.instructions.length > 800
+                  ? myRecipe.instructions.substring(0, 800) + '...'
+                  : myRecipe.instructions,
+            }}
+          ></div>
+        ) : (
+          <p>Hittade inga instruktioner.</p>
+        )}
+      </div>
+
       <h2 className="drink-headline">Rekommenderad dryck</h2>
       <div className="drinks">
         {myRecipe.drinks

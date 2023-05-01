@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { useCallback } from 'react'
 
-const url = 'https://www.våranApiAddress.com/api/json/search'
-const recipeUrl = 'https://localhost:7001/api/Content/import-food/'
+const recipeUrl =
+  'https://localhost:7001/get-recipes/page/1/pageSize/100?glutenFree=false&dairyFree=false&keto=false&vegetarian=false&vegan=false&cheap=false&veryHealthy=false'
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
@@ -13,7 +13,7 @@ const AppProvider = ({ children }) => {
   const [recipes, setRecipes] = useState([])
   const [selectedRecipe, setSelectedRecipe] = useState(null)
 
-  const apiKey = '&apiKey=0bb4b70465ef44b98ece530f9f0fa515'
+  const apiKey = process.env.REACT_APP_API_KEY
   const headers = {
     'Content-Type': 'application/json',
     'X-Api-Key': apiKey,
@@ -21,6 +21,7 @@ const AppProvider = ({ children }) => {
 
   const fetchRecipes = useCallback(async () => {
     try {
+      console.log('fetching recipes')
       const response = await fetch(recipeUrl, { headers })
       const data = await response.json()
       const myRecipes = data
