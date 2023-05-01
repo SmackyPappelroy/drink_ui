@@ -2,7 +2,7 @@
   position: fixed;
   padding: 10px 30px;
   bottom: 7%;
-  width: 60%;
+  width: 70%;
   left: 10%;
   display: flex;
   flex-wrap: wrap;
@@ -138,10 +138,10 @@
 }
 
 .fooddrink{
-  height: 60%;
-  width: 20%;
+  height: 50%;
+  width: 15%;
   border-radius: 10px;
-  margin:10px;
+  margin:15px;
   position: flex;
 }
 
@@ -155,10 +155,10 @@
 
 
 .drink{
-height: 60%;
-width: 20%;
+height: 50%;
+width: 15%;
 border-radius: 10px;
-margin:20px;
+margin:15px;
 position: flex;
 align-items: center;
 }
