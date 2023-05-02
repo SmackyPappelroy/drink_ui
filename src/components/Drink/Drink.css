@@ -1,11 +1,11 @@
 @media only screen and (max-width: 768px) {
-  .dish {
+  .drinkcard {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     gap: 20px;
     grid-auto-flow: row;
-    grid-template-areas: 'image' 'title' 'ingredients' 'instructions';
+    grid-template-areas: 'image' 'title' 'description' 'drinkType';
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -19,21 +19,21 @@
     margin-right: 20px;
   }
 
-  .dish-title {
+  .drink-title {
     grid-area: title;
     text-align: center;
   }
 
-  .dish-ingredients {
-    grid-area: ingredients;
+  .drink-description {
+    grid-area: description;
   }
 
-  .dish-instructions {
-    grid-area: instructions;
+  .drink-drinkType {
+    grid-area: drinkType;
     margin-left: 0;
   }
 
-  .dish-mobile {
+  .drink-mobile {
     position: static;
     width: calc(100% - 20px);
     padding: 20px;
@@ -41,17 +41,17 @@
     left: 0;
   }
 
-  .drinks > :nth-child(n + 4) {
+  .dishes > :nth-child(n + 4) {
     display: none;
   }
 }
 
 @media only screen and (min-width: 769px) {
-  body .dish {
+  body .drinkcard {
     margin-left: 7%;
   }
 
-  .dish {
+  .drinkcard {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     grid-template-rows: 0.25fr 0.15fr 1fr 0.2fr 0.2fr;
@@ -76,7 +76,7 @@
   }
 }
 
-.dish {
+.drinkcard {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   grid-template-rows: 0.25fr 0.15fr 1fr 0.2fr 0.2fr;
@@ -99,7 +99,7 @@
   border-radius: 20px;
 }
 
-.drinks {
+.dishescard {
   grid-row: 5;
   grid-column: 1 / -1;
   display: flex;
@@ -109,67 +109,71 @@
   font-weight: bold;
   color: #000000;
   gap: 5px;
+  margin:1%;
 }
 
-.dish-ingredients ul {
+.drink-description ul {
   list-style-type: none;
   padding: 0;
 }
 
-.dish-ingredients ul li {
+.drink-description ul li {
   color: #646464;
   position: relative;
-  padding-left: 20px;
+  padding-left: 30px;
 }
 
-.dish-ingredients ul li:before {
+.drink-description ul li:before {
   content: '';
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  height: 6px;
-  width: 6px;
+  height: 15%;
+  width: 5%;
   background-color: black;
   border-radius: 50%;
 }
 
-.dish-ingredients {
+.drink-description {
   grid-row: 3;
   grid-column: 2;
   font-size: 15px;
+  padding: 30% 0%;
   color: #000000;
 }
 
-.dish-ingredients h3 {
+.drink-description h3 {
   font-size: 20px;
   color: #000000;
 }
-.dish-ingredients div {
+.drink-description div {
   font-size: 15px;
   color: #646464;
 }
 
-.dish-instructions {
+.drink-drinkType {
   margin-left: 50px;
   grid-row: 3;
   grid-column: 3 / 5;
+  padding: 15% 30%;
   font-size: 15px;
   color: #646464;
+  margin:25%;
 }
 
-.dish-instructions ol {
+.drink-drinkType ol {
   list-style-type: none;
   counter-reset: step-counter;
   padding: 0;
 }
 
-.dish-instructions ol li {
+.drink-drinkType ol li {
   position: relative;
   padding-left: 25px;
 }
 
-.dish-instructions ol li:before {
+.drink-drinkType ol li:before {
   content: counter(step-counter) '.';
   counter-increment: step-counter;
   position: absolute;
@@ -177,35 +181,35 @@
   color: black;
 }
 
-.dish-instructions ol li * {
+.drink-drinkType ol li * {
   color: #646464;
 }
 
-.dish-instructions h3 {
+.drink-drinkType h3 {
   font-size: 20px;
   color: #000000;
 }
 
-.dish-instructions div {
+.drink-drinkType div {
   font-size: 15px;
   color: #444444;
 }
 
-.drink-image {
+.dish-image {
   height: 100px;
 }
 
-.drink-headline {
+.dish-headline {
   grid-row: 4;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 4px;
-  margin-bottom: 10px;
+  margin-bottom: -10%;
   width: 100%;
 }
 
-.drink-name {
+.dish-name {
   grid-row: 5;
   display: flex;
   justify-content: bottom;
@@ -213,7 +217,7 @@
   margin-top: 4px;
   font-size: 16px;
   word-wrap: normal;
-  width: 50px;
+  width: 150px;
 }
 
 .allergens {
@@ -223,7 +227,7 @@
   color: #000000;
 }
 
-.dish-title {
+.drink-title {
   grid-row: 1;
   grid-column: 1;
   font-size: 20px;
@@ -231,20 +235,21 @@
   color: #000000;
 }
 
-.dish-info {
+.drink-info {
   grid-row: 1 / 4;
   grid-column: 2 / 5;
   font-size: 15px;
   color: #000000;
 }
-.dish-ingredients {
+.drink-description {
   grid-row: 3;
   grid-column: 2;
   font-size: 15px;
   color: #000000;
+  margin:50% 0%;
 }
 
-.dish-mobile {
+.drink-mobile {
   position: static;
   width: 100%;
   padding: 20px;
@@ -263,8 +268,9 @@
   grid-column: 1;
   object-fit: cover;
   border-radius: 40px;
+  margin:-8% 3%;
 }
 
-.dish-name {
+.drink-name {
   font-size: 25px;
 }

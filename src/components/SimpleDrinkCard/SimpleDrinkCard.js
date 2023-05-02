@@ -3,18 +3,18 @@ import React from 'react'
 import { useGlobalContext } from '../../context'
 import { Link } from 'react-router-dom'
 
-function SimpleDrinkCard({ image, title, id }) {
+function SimpleDrinkCard({ image, name, id }) {
   const { isMobileSize } = useGlobalContext()
-  const titleLength = isMobileSize ? 30 : 40
+  const nameLength = isMobileSize ? 30 : 40
 
   return (
     <Link to={`/drink/${id}`} className="simpleDrinkCard">
-      <img className="simpleDrinkCardImage" src={image} alt={title}></img>
-      <div className="simpleDrinkCardTitle">
-        {title !== undefined
-          ? title.length > 20
-            ? title.substring(0, titleLength) + '...'
-            : title
+      <img className="simpleDrinkCardImage" src={image} alt={name}></img>
+      <div className="simpleDrinkCardname">
+        {name !== undefined
+          ? name.length > 20
+            ? name.substring(0, nameLength) + '...'
+            : name
           : ''}
       </div>
       <div className="simpleDrinkCardLine"></div>

@@ -5,6 +5,7 @@ import Dishes from './Dishes/Dishes'
 import Dish from './Dish/Dish'
 import Contact from './Contact/contact'
 import Drinks from './Drinks/Drinks'
+import Drink from './Drink/Drink'
 import Meals from './Meals/meals'
 
 const Main = () => {
@@ -17,6 +18,7 @@ const Main = () => {
       <Route path="/Meals" element={<Meals />} />
       <Route path="/Drinks" element={<Drinks />} />
       <Route path="/Dish/:id" element={<Dish />} />
+      <Route path="/Drink/:id" element={<Drink />} />
       <Route path="*" element={<h1 className="not-found">404: Not Found</h1>} />
     </Routes>
   )

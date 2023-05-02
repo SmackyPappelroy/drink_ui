@@ -6,9 +6,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 const filtersMeals = [
-    { name: 'breakfast',title:"Breakfast", icon: faCoffee },
-    { name: 'lunch',title:"Lunch", icon: faGlassWater },
-    { name: 'dinner',title:"Dinner", icon: faWineGlass },
+    { name: 'breakfast', icon: faCoffee },
+    { name: 'lunch', icon: faGlassWater },
+    { name: 'dinner', icon: faWineGlass },
   ]
 
   export default filtersMeals
