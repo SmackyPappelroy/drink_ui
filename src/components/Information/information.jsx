@@ -16,7 +16,7 @@ const Information = () => {
         <></>
       ) : (
         <>
-          <PageHeader iconSize="3x" titleSize="50px" />
+          <PageHeader />
         </>
       )}
       <h2>Information</h2>

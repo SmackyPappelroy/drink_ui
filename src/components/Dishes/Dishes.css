@@ -1,9 +1,7 @@
 .dishes {
-  position: absolute;
   padding: 20px;
-  margin-top: 1%;
-  margin-bottom: 2%;
-  width: 90%;
+  margin: 50px auto;
+  width: 75%;
   height: auto;
   max-height: 90%;
   left: 10%;
@@ -165,6 +163,10 @@
 }
 
 @media (max-width: 800px) {
+  .dishes {
+    width: 90%;
+  }
+
   .dishesTitle {
     display: grid;
     grid-template-columns: 1fr 1fr;

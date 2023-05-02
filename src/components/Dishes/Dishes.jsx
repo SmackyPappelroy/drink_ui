@@ -80,6 +80,7 @@ function Dishes() {
         return false;
       return true;
     });
+    console.log(recipes.length);
     console.log(filtered.length);
     setFilteredRecipes(filtered.length > 0 ? filtered : []);
   };

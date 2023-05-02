@@ -1,7 +1,15 @@
-.drink{
+.drink {
     border-radius: 100px;
-    padding: 100px;
 }
+
 .Content {
-    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Content img {
+    object-fit: contain;
+    width: auto;
+    height: 150px;
 }

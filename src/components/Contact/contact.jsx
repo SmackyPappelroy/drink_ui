@@ -15,7 +15,9 @@ const Contact = () => {
         <></>
       ) : (
         <>
-          <PageHeader iconSize="3x" titleSize="50px" />
+          <div className="page-header-container">
+            <PageHeader />
+          </div>
         </>
       )}
       <h2>Contact</h2>
