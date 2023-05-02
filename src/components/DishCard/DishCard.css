@@ -2,7 +2,6 @@
   position: absolute;
   width: 80vh;
   height: 60vh;
-
   background: #ffffff;
   border-radius: 4vh;
 }
@@ -105,7 +104,16 @@
   height: 350px;
   left: 74px;
   top: 132px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.dish-name {
+  font-size: 40px;
+  order: 1;
+}
+
 .dishPicture {
   position: relative;
   width: 30%;
@@ -114,9 +122,9 @@
   right: 62.94%;
   top: 0%;
   bottom: 0%;
-
   background: url('../../Images/dishes/MushroomPeppers.png');
   border-radius: 20px;
+  order: 2;
 }
 .dishDescription {
   position: relative;
@@ -124,7 +132,6 @@
   right: 0%;
   top: 2.29%;
   bottom: 33.43%;
-
   font-family: 'Lobster';
   font-style: normal;
   font-weight: 400;
@@ -133,6 +140,7 @@
   text-transform: capitalize;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transform: rotate(0.13deg);
+  order: 3;
 }
 .drinkRecommend {
   position: relative;
@@ -140,19 +148,16 @@
   right: 12.95%;
   top: 86.29%;
   bottom: 2.86%;
-
   font-family: 'Lobster';
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
   line-height: 38px;
-  /* identical to box height */
-
   text-transform: capitalize;
   text-decoration: underline;
-
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transform: rotate(0.13deg);
+  order: 4;
 }
 .footer {
   position: relative;
@@ -187,4 +192,10 @@
   /* identical to box height */
 
   text-transform: capitalize;
+}
+@media screen and (max-width: 600px) {
+  .drinkRecommend {
+    position: relative;
+    top: 90%;
+  }
 }

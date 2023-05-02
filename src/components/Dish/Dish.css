@@ -39,7 +39,8 @@
   color: #000000;
 }
 
-.dish-ingredients h3 {
+.dish-ingredients h3:nth-of-type(2) {
+  grid-column: 3;
   font-size: 20px;
   color: #000000;
 }
@@ -56,7 +57,8 @@
   color: #646464;
 }
 
-.dish-instructions h3 {
+.dish-instructions h3:nth-of-type(1) {
+  
   font-size: 20px;
   color: #000000;
 }
@@ -144,4 +146,148 @@
 
 .dish-name {
   font-size: 40px;
+}
+@media screen and (min-width: 769px) and (max-width: 1030px) {
+  .dish {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      'title'
+      'info'
+      'image'
+      'ingredients'
+      'instructions'
+      'drinks';
+  }
+
+  .dish-title {
+    grid-area: title;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .dish-info {
+    grid-area: info;
+    font-size: 15px;
+    color: #000000;
+    margin-top: 20px;
+  }
+
+  .image {
+    grid-area: image;
+    border-radius: 20px;
+    justify-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .dish-name {
+    grid-row: 3;
+    grid-column: 1;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .dish-ingredients {
+    grid-area: ingredients;
+    margin-top: 20px;
+  }
+
+  .dish-instructions {
+    grid-area: instructions;
+    margin-top: 20px;
+  }
+
+  .dish-ingredients h3:nth-of-type(2),
+  .dish-instructions h3:nth-of-type(1) {
+    font-size: 20px;
+    color: #000000;
+    margin-top: 10px;
+  }
+
+  .drink-headline {
+    grid-area: drinks;
+    font-size: 20px;
+    color: #000000;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+
+
+
+
+/* Media Query for Mobile View (768px) */
+@media screen and (max-width: 768px) {
+  .dish {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      'title'
+      'info'
+      'image'
+      'ingredients'
+      'instructions'
+      'drinks';
+  }
+
+  .dish-title {
+    grid-area: title;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .dish-info {
+    grid-area: info;
+    font-size: 15px;
+    color: #000000;
+    margin-top: 20px;
+  }
+
+  .image {
+    grid-area: image;
+    border-radius: 20px;
+    justify-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .dish-name {
+    grid-row: 3;
+    grid-column: 1;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .dish-ingredients {
+    grid-area: ingredients;
+    margin-top: 20px;
+  }
+
+  .dish-instructions {
+    grid-area: instructions;
+    margin-top: 20px;
+  }
+
+  .dish-ingredients h3:nth-of-type(2),
+  .dish-instructions h3:nth-of-type(1) {
+    font-size: 20px;
+    color: #000000;
+    margin-top: 10px;
+  }
+
+  .drink-headline {
+    grid-area: drinks;
+    font-size: 20px;
+    color: #000000;
+    margin-top: 20px;
+    text-align: center;
+  }
 }
