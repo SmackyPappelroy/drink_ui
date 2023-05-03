@@ -65,6 +65,10 @@
        top: 110px;
 }
 
+.mobile.navbar .page-header {
+       margin-bottom: 25px;
+}
+
 .mobile.navbar .navbar-nav .nav-item {
        position: relative;
        list-style: none;

@@ -11,9 +11,6 @@ import filtersMeals from '../Buttons/FiltersMeals'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
 
-
-
-
 function Meals () {
   const { recipes, loading, isMobileSize } = useGlobalContext()
   const [start, setStart] = React.useState(0)
@@ -24,7 +21,6 @@ function Meals () {
   const [dinner, setDinner] = React.useState(false)
 
   const [searchTerm, setSearchTerm] = React.useState('')
-
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value)

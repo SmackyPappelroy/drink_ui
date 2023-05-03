@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Icon from "@fortawesome/free-solid-svg-icons";
 import "./pageHeader.css";
 const PageHeader = ({
-  iconSize = "3x",
+  iconSize = "2x",
   titleSize = "2.3rem",
   titleColor = "#D9D9D9",
 }) => {

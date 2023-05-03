@@ -13,122 +13,120 @@ import PageHeader from '../PageHeader/pageHeader'
 function Dishes() {
   // Go to this page when you click on the dishes button in the navbar
 
-  const { recipes, loading, isMobileSize } = useGlobalContext()
-  const [start, setStart] = React.useState(0)
-  const [end, setEnd] = React.useState(10)
-  const [filteredRecipes, setFilteredRecipes] = React.useState([])
-  const [vegan, setVegan] = React.useState(false)
-  const [dairyFree, setDairyFree] = React.useState(false)
-  const [glutenFree, setGlutenFree] = React.useState(false)
-  const [ketogenic, setKetogenic] = React.useState(false)
-  const [vegetarian, setVegetarian] = React.useState(false)
-  const [veryHealthy, setVeryHealthy] = React.useState(false)
+  const { recipes, loading, isMobileSize } = useGlobalContext();
+  const [start, setStart] = React.useState(0);
+  const [end, setEnd] = React.useState(10);
+  const [filteredRecipes, setFilteredRecipes] = React.useState([]);
+  const [vegan, setVegan] = React.useState(false);
+  const [dairyFree, setDairyFree] = React.useState(false);
+  const [glutenFree, setGlutenFree] = React.useState(false);
+  const [ketogenic, setKetogenic] = React.useState(false);
+  const [vegetarian, setVegetarian] = React.useState(false);
+  const [veryHealthy, setVeryHealthy] = React.useState(false);
 
-  const [searchTerm, setSearchTerm] = React.useState('')
+  const [searchTerm, setSearchTerm] = React.useState("");
 
   const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value)
-    performSearch(e.target.value)
-  }
+    setSearchTerm(e.target.value);
+    performSearch(e.target.value);
+  };
 
   const performSearch = (query) => {
     const filtered = recipes.filter((recipe) => {
       if (recipe.title.toLowerCase().includes(query.toLowerCase())) {
-        return true
+        return true;
       }
-      return false
-    })
-    setFilteredRecipes(filtered)
-  }
+      return false;
+    });
+    setFilteredRecipes(filtered);
+  };
 
   useEffect(() => {
-    setFilteredRecipes(recipes)
-  }, [recipes])
+    setFilteredRecipes(recipes);
+  }, [recipes]);
 
   useEffect(() => {
-    updateFilteredRecipes()
-  }, [vegan, dairyFree, glutenFree, ketogenic, vegetarian, veryHealthy])
+    updateFilteredRecipes();
+  }, [vegan, dairyFree, glutenFree, ketogenic, vegetarian, veryHealthy]);
 
   const increment = () => {
-    setStart(start + 10)
-    setEnd(end + 10)
+    setStart(start + 10);
+    setEnd(end + 10);
     if (end >= recipes.length) {
-      setStart(recipes.length - 10)
-      setEnd(recipes.length)
+      setStart(recipes.length - 10);
+      setEnd(recipes.length);
     }
-  }
+  };
   const decrement = () => {
-    setStart(start - 10)
-    setEnd(end - 10)
+    setStart(start - 10);
+    setEnd(end - 10);
     if (start <= 0) {
-      setStart(0)
-      setEnd(10)
+      setStart(0);
+      setEnd(10);
     }
-  }
+  };
 
   const updateFilteredRecipes = async () => {
     const filtered = recipes.filter((recipe) => {
-      if (vegan && !recipe.vegan) return false
-      if (dairyFree && !recipe.dairyFree) return false
-      if (glutenFree && !recipe.glutenFree) return false
-      if (ketogenic && !recipe.ketogenic) return false
-      if (vegetarian && !recipe.vegetarian) return false
-      if (veryHealthy && !recipe.veryHealthy) return false
+      if (vegan && !recipe.vegan) return false;
+      if (dairyFree && !recipe.dairyFree) return false;
+      if (glutenFree && !recipe.glutenFree) return false;
+      if (ketogenic && !recipe.ketogenic) return false;
+      if (vegetarian && !recipe.vegetarian) return false;
+      if (veryHealthy && !recipe.veryHealthy) return false;
       if (
         searchTerm &&
         !recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
       )
-        return false
-      return true
-    })
-    console.log(filtered.length)
-    setFilteredRecipes(filtered.length > 0 ? filtered : [])
-  }
-
+        return false;
+      return true;
+    });
+    console.log(recipes.length);
+    console.log(filtered.length);
+    setFilteredRecipes(filtered.length > 0 ? filtered : []);
+  };
   const filterFood = (filter) => {
-    setStart(0)
-    setEnd(10)
+    setStart(0);
+    setEnd(10);
     switch (filter) {
-      case 'vegan':
-        setVegan((prev) => !prev)
-        break
-      case 'dairyFree':
-        setDairyFree((prev) => !prev)
-        break
-      case 'glutenFree':
-        setGlutenFree((prev) => !prev)
-        break
-      case 'ketogenic':
-        setKetogenic((prev) => !prev)
-        break
-      case 'vegetarian':
-        setVegetarian((prev) => !prev)
-        break
-      case 'veryHealthy':
-        setVeryHealthy((prev) => !prev)
-        break
+      case "vegan":
+        setVegan((prev) => !prev);
+        break;
+      case "dairyFree":
+        setDairyFree((prev) => !prev);
+        break;
+      case "glutenFree":
+        setGlutenFree((prev) => !prev);
+        break;
+      case "ketogenic":
+        setKetogenic((prev) => !prev);
+        break;
+      case "vegetarian":
+        setVegetarian((prev) => !prev);
+        break;
+      case "veryHealthy":
+        setVeryHealthy((prev) => !prev);
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
 
   const changePage = (index) => {
-    setStart(index)
-    setEnd(index + 10)
-  }
-
+    setStart(index);
+    setEnd(index + 10);
+  };
+  const isMobile = useNavbarDisplay();
   if (loading) {
-    return <h1 className="infotext">Laddar...</h1>
+    return <h1 className="infotext">Laddar...</h1>;
   } else {
-    console.log(filteredRecipes.length)
+    console.log(filteredRecipes.length);
     return (
-      <div className={isMobileSize ? 'dishes-mobile' : 'dishes'}>
+      <div className={isMobileSize ? "dishes-mobile" : "dishes"}>
         <div className="dishesTitle">
-          <h2 className="fine-dine">
-            <div className="title-gray">FineDine</div>
-            <FontAwesomeIcon icon={Icon.faDrumstickBite} />
-            <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
-          </h2>
+          <div className="page-header-wrapper">
+            {isMobile ? <></> : <PageHeader iconSize="2x"></PageHeader>}
+          </div>
           <form className="search" onSubmit={(e) => e.preventDefault()}>
             <input
               type="text"
@@ -162,19 +160,19 @@ function Dishes() {
                 title={recipe.title}
                 id={recipe.id}
               />
-            )
+            );
           })
         ) : (
           <h1 className="infotext">Hittade inga recept</h1>
         )}
         <button
-          className={filteredRecipes.length > 10 ? 'button' : 'hidden'}
+          className={filteredRecipes.length > 10 ? "button" : "hidden"}
           onClick={() => decrement()}
         >
           Previous
         </button>
 
-        <div className={filteredRecipes.length > 10 ? 'page' : 'hidden'}>
+        <div className={filteredRecipes.length > 10 ? "page" : "hidden"}>
           <p>
             {start + 1} - {end} av {filteredRecipes.length}
           </p>
@@ -186,7 +184,7 @@ function Dishes() {
                   <span
                     key={i}
                     onClick={() => changePage(i * 10)}
-                    className={i * 10 === start ? 'dot-active' : 'dot'}
+                    className={i * 10 === start ? "dot-active" : "dot"}
                   ></span>
                 )
               )}
@@ -194,14 +192,14 @@ function Dishes() {
         </div>
 
         <button
-          className={filteredRecipes.length > 10 ? 'button' : 'hidden'}
+          className={filteredRecipes.length > 10 ? "button" : "hidden"}
           onClick={() => increment()}
         >
           Next
         </button>
       </div>
-    )
+    );
   }
 }
 
-export default Dishes
+export default Dishes;

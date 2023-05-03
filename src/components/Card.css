@@ -1,8 +1,7 @@
 .card {
-  position: fixed;
   padding: 10px 30px;
   bottom: 7%;
-  width: 70%;
+  width: 75%;
   left: 10%;
   display: flex;
   flex-wrap: wrap;
@@ -11,27 +10,23 @@
   background-color: white;
   border-radius: 20px;
   height: 80%;
+  margin: 50px auto;
 }
 
 .card-mobile {
-  position: fixed;
   padding: 20px;
-  margin-top: 1%;
-  margin-bottom: 2%;
-  margin-left: 5px;
-  height: 80%;
-  width: 98%;
-  left: 0%;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
   background-color: white;
   border-radius: 20px;
+  width: 90%;
+  margin: 20px auto;
 }
 
 .icon {
-  margin:-12.8% 63%;
+  margin: -12.8% 63%;
   position: fixed;
   display: flex;
 }
@@ -75,6 +70,7 @@
   color: #000000;
   margin-right: 4px;
 }
+
 .icon-unclicked {
   color: #818181;
   margin-right: 4px;
@@ -83,6 +79,7 @@
 .hidden {
   display: none;
 }
+
 .infotext {
   /* display center screen */
   width: auto;
@@ -92,9 +89,10 @@
   top: 30%;
   left: 40%;
   color: red;
+  flex: 0 1 100%;
 }
 
-.title{
+.title {
   font-weight: 400;
   display: flex;
   justify-content: right;
@@ -137,37 +135,37 @@
   flex-direction: column;
 }
 
-.fooddrink{
+.fooddrink {
   height: 50%;
   width: 15%;
   border-radius: 10px;
-  margin:15px;
+  margin: 15px;
   position: flex;
 }
 
-.mobilefooddrink{
+.mobilefooddrink {
   height: 35%;
   width: 20%;
   border-radius: 10px;
-  margin:12% 2.5%;
+  margin: 12% 2.5%;
   position: flex;
 }
 
 
-.drink{
-height: 50%;
-width: 15%;
-border-radius: 10px;
-margin:15px;
-position: flex;
-align-items: center;
+.drink {
+  height: 50%;
+  width: 15%;
+  border-radius: 10px;
+  margin: 15px;
+  position: flex;
+  align-items: center;
 }
 
-.mobiledrink{
+.mobiledrink {
   height: 45%;
   width: 25%;
   border-radius: 10px;
-  margin:10% 4%;
+  margin: 10% 4%;
   position: flex;
   align-items: center;
-  }
+}

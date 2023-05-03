@@ -18,19 +18,19 @@ import PageHeader from './components/PageHeader/pageHeader'
 
 function App() {
 
-  const location = useLocation();
-  const isMobile = useNavbarDisplay();
-  function renderPageHeader() {
-    const isHomePage = location.pathname === '/';
-    if (isMobile) return <></>;
-    else if (isHomePage)
-      return <PageHeader titleSize='4.5rem' iconSize='5x' />
-    else
-      return <PageHeader />
-  }
+  // const location = useLocation();
+  // const isMobile = useNavbarDisplay();
+  // function renderPageHeader() {
+  //   const isHomePage = location.pathname === '/';
+  //   if (isMobile) return <></>;
+  //   else if (isHomePage)
+  //     return <PageHeader titleSize='4.5rem' iconSize='5x' />
+  //   else
+  //     return <PageHeader />
+  // }
   return (
     <div className="main">
-      {renderPageHeader()}
+      {/* {renderPageHeader()} */}
       <Navbar />
       <Main />
     </div>
