@@ -1,52 +1,12 @@
-import React, { PureComponent } from "react";
-import PageHeader from "../PageHeader/pageHeader";
-import useNavbarDisplay from "../Navbar/CustomHooks/useNavbarDisplay";
-import "../Card.css";
-import "../../App.css";
-import "./Drinks.css";
-import salmonwine from "./MalbecRedWine.png";
-const Drinks = () => {
-  const isMobile = useNavbarDisplay();
-  return (
-    <div className={isMobile ? "card-mobile" : "card"}>
-      {isMobile ? (
-        <></>
-      ) : (
-        <>
-          <PageHeader />
-        </>
-      )}
-      <h2>Drinks</h2>
-      <div className="infotext">
-        <p>
-          Our idea is try to find best combonation of dishes that fit well to
-          certain drinks. wine with steak, chicken.{" "}
-        </p>
-        <p> Some special dishes that fit well to certain drink.</p>
-        <div className="Content">
-          <img src={salmonwine} alt="my-gif" className="drink" />
-          <img src={salmonwine} alt="my-gif" className="drink" />
-          <img src={salmonwine} alt="my-gif" className="drink" />
-          <img src={salmonwine} alt="my-gif" className="drink" />
-          <img src={salmonwine} alt="my-gif" className="drink" />
-          <img src={salmonwine} alt="my-gif" className="drink" />
-          <img src={salmonwine} alt="my-gif" className="drink" />
-          <img src={salmonwine} alt="my-gif" className="drink" />
-        </div>
-      </div>
-    </div>
-  );
-};
-=======
 import React, { PureComponent } from 'react'
-import PageHeader from "../PageHeader/pageHeader"
+import PageHeader from '../PageHeader/pageHeader'
 import useNavbarDisplay from '../Navbar/CustomHooks/useNavbarDisplay'
 import '../Card.css'
 import '../../App.css'
 import './Drinks.css'
-import { useGlobalContext } from "../../context"
-import SimpleDrinkCard from "../SimpleDrinkCard/SimpleDrinkCard"
-import { useEffect} from 'react'
+import { useGlobalContext } from '../../context'
+import SimpleDrinkCard from '../SimpleDrinkCard/SimpleDrinkCard'
+import { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
 import drink from '../Drink/Drink'
@@ -58,7 +18,6 @@ const Drinks = () => {
   const [filteredDrinks, setFilteredDrinks] = React.useState([])
 
   const [searchTerm, setSearchTerm] = React.useState('')
-
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value)
@@ -74,8 +33,6 @@ const Drinks = () => {
     })
     setFilteredDrinks(filtered)
   }
-
-
 
   const increment = () => {
     setStart(start + 10)
@@ -107,14 +64,13 @@ const Drinks = () => {
     setFilteredDrinks(filtered.length > 0 ? filtered : [])
   }
 
-//     const [breakfast, setBreakfast] = React.useState(false);
-// const [lunch, setLunch] = useState(false);
-// const [dinner, setDinner] = useState(false);
+  //     const [breakfast, setBreakfast] = React.useState(false);
+  // const [lunch, setLunch] = useState(false);
+  // const [dinner, setDinner] = useState(false);
 
-useEffect(() => {
+  useEffect(() => {
     setFilteredDrinks(drinks)
   }, [drinks])
-
 
   const changePage = (index) => {
     setStart(index)
@@ -133,7 +89,7 @@ useEffect(() => {
             <FontAwesomeIcon icon={Icon.faDrumstickBite} />
             <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
           </h2>
-          
+
           <form className="search" onSubmit={(e) => e.preventDefault()}>
             <input
               drink="text"
@@ -141,7 +97,6 @@ useEffect(() => {
               onChange={handleSearchChange}
             />
           </form>
-          
         </div>
 
         {!filteredDrinks || filteredDrinks.length > 0 ? (
@@ -196,4 +151,4 @@ useEffect(() => {
   }
 }
 
-export default Drinks;
+export default Drinks

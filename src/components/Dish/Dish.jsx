@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
 import '../../App.css'
 import { Link } from 'react-router-dom'
-
+import PageHeader from '../PageHeader/pageHeader'
 
 const findRecipeById = (recipes, id) => {
-  return recipes.find((recipe) => recipe.id === parseInt(id));
-};
+  return recipes.find((recipe) => recipe.id === parseInt(id))
+}
 
 const fetchDrinkFromRecipeApi = async (id) => {
   const url = `https://localhost:7001/get-dish/${id}`
@@ -38,16 +38,16 @@ const Dish = () => {
   }, [id, recipes])
 
   if (loading || !recipes || !recipes.length || !id || !myRecipe) {
-    return <h1 className="loading"></h1>;
+    return <h1 className="loading"></h1>
   }
 
   if (!myRecipe) {
-    return null;
+    return null
   }
 
   return (
-    <div className={isMobileSize ? "dish-mobile" : "dish"}>
-      {isMobile ? (
+    <div className={isMobileSize ? 'dish-mobile' : 'dish'}>
+      {isMobileSize ? (
         <></>
       ) : (
         <PageHeader titleSize="3.5rem" iconSize="5x"></PageHeader>
@@ -83,7 +83,7 @@ const Dish = () => {
             dangerouslySetInnerHTML={{
               __html:
                 myRecipe.instructions.length > 800
-                  ? myRecipe.instructions.substring(0, 800) + "..."
+                  ? myRecipe.instructions.substring(0, 800) + '...'
                   : myRecipe.instructions,
             }}
           ></div>
@@ -101,19 +101,17 @@ const Dish = () => {
                     className="drink-image"
                     src={drink.image}
                     alt={drink.name}
-                    
                   />
                   <Link to={`/drink/${drink.id}`}>
-
-                  <h4 className="drink-name">{drink.name}</h4>
+                    <h4 className="drink-name">{drink.name}</h4>
                   </Link>
                 </div>
-              );
+              )
             })
-          : "Hittade inga rekommenderade drycker."}
+          : 'Hittade inga rekommenderade drycker.'}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Dish;
+export default Dish

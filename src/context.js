@@ -4,8 +4,7 @@ import { useCallback } from 'react'
 const recipeUrl =
   'https://localhost:7001/get-recipes/page/1/pageSize/100?glutenFree=false&dairyFree=false&keto=false&vegetarian=false&vegan=false&cheap=false&veryHealthy=false'
 
-  const drinksUrl =
-  'https://localhost:7001/get-drinks/page/1/pageSize/100'
+const drinksUrl = 'https://localhost:7001/get-drinks/page/1/pageSize/100'
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
@@ -53,9 +52,6 @@ const AppProvider = ({ children }) => {
     }
   })
 
-
-
-
   const fetchRecipes = useCallback(async () => {
     try {
       console.log('fetching recipes')
@@ -98,7 +94,7 @@ const AppProvider = ({ children }) => {
   })
 
   useEffect(() => {
-    fetchRecipes(),fetchDrinks()
+    fetchRecipes(), fetchDrinks()
   }, [])
   return (
     <AppContext.Provider
@@ -116,8 +112,6 @@ const AppProvider = ({ children }) => {
     </AppContext.Provider>
   )
 }
-
-
 
 export const useGlobalContext = () => {
   return useContext(AppContext)
