@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
-import { useGlobalContext } from "../../context";
-import "./Dishes.css";
-import "../../App.css";
-import SimpleDishCard from "../SimpleDishCard/SimpleDishCard";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as Icon from "@fortawesome/free-solid-svg-icons";
-import FilterButtons from "../Buttons/Filterbuttons";
-import filters from "../Buttons/Filters";
-import PageHeader from "../PageHeader/pageHeader";
-import useNavbarDisplay from "../Navbar/CustomHooks/useNavbarDisplay";
+import React, { useEffect } from 'react'
+import { useGlobalContext } from '../../context'
+import '../Card.css'
+import './Dishes.css'
+import '../../App.css'
+import SimpleDishCard from '../SimpleDishCard/SimpleDishCard'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import * as Icon from '@fortawesome/free-solid-svg-icons'
+import FilterButtons from '../Buttons/Filterbuttons'
+import filters from '../Buttons/Filters'
+import PageHeader from '../PageHeader/pageHeader'
+
 function Dishes() {
   // Go to this page when you click on the dishes button in the navbar
 
@@ -133,7 +134,7 @@ function Dishes() {
               onChange={handleSearchChange}
             />
           </form>
-          <div className="iconContainer">
+          <div className="icons">
             <FilterButtons
               filters={filters}
               activeFilters={{
@@ -162,7 +163,7 @@ function Dishes() {
             );
           })
         ) : (
-          <h1 className="dishinfotext">Hittade inga recept</h1>
+          <h1 className="infotext">Hittade inga recept</h1>
         )}
         <button
           className={filteredRecipes.length > 10 ? "button" : "hidden"}

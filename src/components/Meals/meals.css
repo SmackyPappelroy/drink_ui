@@ -1,24 +1,52 @@
 .cards {
-    position: fixed;
-    padding: 10px 30px;
-    bottom: 2%;
-    width: 80%;
-    left: 10%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 20px;
-    height: 85%;
-  }
+  position: flex;
+  padding: 20px;
+  margin:2% 6%;
+  width: 90%;
+  height: auto;
+  max-height: 120%;
+  left: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 20px;
+}
 
-  .icon {
-    margin: -11.1% 65%;
-    display: flex;
-    flex-wrap: wrap;
-  }
+.card-mobiles {
+  position: absolute;
+  padding: 20px;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  margin-left: 5px;
+  height: auto;
+  width: 98%;
+  left: 0%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 20px;
+}
 
+.icon {
+  margin: 0% 68%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icons {
+  grid-row: 1;
+  grid-column: 3;
+  gap: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right;
+  margin-left: 2px;
+}
 
   /* .icon {
     grid-row: 1;
