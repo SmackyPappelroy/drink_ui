@@ -4,6 +4,7 @@ import './Dish.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
 import '../../App.css'
+import { Link } from 'react-router-dom'
 
 const findRecipeById = (recipes, id) => {
   return recipes.find((recipe) => recipe.id === parseInt(id))
@@ -94,8 +95,12 @@ const Dish = () => {
                     className="drink-image"
                     src={drink.image}
                     alt={drink.name}
+                    
                   />
+                  <Link to={`/drink/${drink.id}`}>
+
                   <h4 className="drink-name">{drink.name}</h4>
+                  </Link>
                 </div>
               )
             })

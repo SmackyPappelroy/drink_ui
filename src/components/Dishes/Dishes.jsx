@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../../context'
+import '../Card.css'
 import './Dishes.css'
 import '../../App.css'
 import SimpleDishCard from '../SimpleDishCard/SimpleDishCard'
@@ -135,7 +136,7 @@ function Dishes() {
               onChange={handleSearchChange}
             />
           </form>
-          <div className="iconContainer">
+          <div className="icons">
             <FilterButtons
               filters={filters}
               activeFilters={{
@@ -164,7 +165,7 @@ function Dishes() {
             )
           })
         ) : (
-          <h1 className="dishinfotext">Hittade inga recept</h1>
+          <h1 className="infotext">Hittade inga recept</h1>
         )}
         <button
           className={filteredRecipes.length > 10 ? 'button' : 'hidden'}
