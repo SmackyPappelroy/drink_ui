@@ -48,11 +48,11 @@ const Drink = () => {
   return (
     <div className={isMobileSize ? 'drink-mobile' : 'drinkcard'}>
       <div className="drink-title">
-        <h2 className="fine-dine">
+        {/* <h2 className="fine-dine">
           <div className="title-gray">FineDine</div>
           <FontAwesomeIcon icon={Icon.faDrumstickBite} />
           <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
-        </h2>
+        </h2> */}
       </div>
 
       <div className="drink-info">
@@ -90,16 +90,16 @@ const Drink = () => {
       <h2 className="dish-headline">Rekommenderad rätter</h2>
       <div className="dishescard">
         {dishes.dishes
-          ? dishes.dishes.map((drink, index) => {
+          ? dishes.dishes.map((dish, index) => {
               return (
                 <div className="dish" key={index}>
                   <img
                     className="dish-image"
-                    src={drink.image}
-                    alt={drink.name}
+                    src={dish.image}
+                    alt={dish.name}
                   />
                   <Link>
-                  <h4 className="dish-name">{drink.name}</h4>
+                  <h4 className="dish-name">{dish.name}</h4>
                   </Link>
                 </div>
               )

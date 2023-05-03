@@ -16,7 +16,8 @@
     height: auto;
     object-fit: cover;
     border-radius: 40px;
-    margin-right: 20px;
+    /* margin-right: 20px; */
+    position: flex;
   }
 
   .drink-title {
@@ -207,6 +208,7 @@
   margin-top: 4px;
   margin-bottom: -10%;
   width: 100%;
+  position: flex;
 }
 
 .dish-name {
@@ -227,13 +229,13 @@
   color: #000000;
 }
 
-.drink-title {
+/* .drink-title {
   grid-row: 1;
   grid-column: 1;
   font-size: 20px;
   font-weight: bold;
   color: #000000;
-}
+} */
 
 .drink-info {
   grid-row: 1 / 4;
@@ -246,7 +248,7 @@
   grid-column: 2;
   font-size: 15px;
   color: #000000;
-  margin:50% 0%;
+  margin:40% 50%;
 }
 
 .drink-mobile {
@@ -264,11 +266,12 @@
 }
 
 .image {
-  grid-row: 3;
+  width: 100%;
+  grid-row: 2/4;
   grid-column: 1;
   object-fit: cover;
   border-radius: 40px;
-  margin:-8% 3%;
+  margin:10% 5%;
 }
 
 .drink-name {

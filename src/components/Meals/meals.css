@@ -1,11 +1,10 @@
 .cards {
-  position: absolute;
+  position: flex;
   padding: 20px;
-  margin-top: 1%;
-  margin-bottom: 2%;
+  margin:2% 6%;
   width: 90%;
   height: auto;
-  max-height: 90%;
+  max-height: 120%;
   left: 10%;
   display: flex;
   flex-wrap: wrap;
