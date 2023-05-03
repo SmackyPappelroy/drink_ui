@@ -232,18 +232,10 @@
   color: #000000;
 }
 
-.dish-info {
-  /* grid-row: 1 / 4;
-  grid-column: 2 / 5; */
-  margin:0%;
-  font-size: 15px;
-  color: #000000;
-  position: flex;
-}
 .dish-ingredients {
   grid-row: 3;
   grid-column: 2;
-  margin:0% 15%;
+  margin: 0% 15%;
   font-size: 15px;
   color: #000000;
   position: flex;
@@ -268,6 +260,17 @@
   border-radius: 40px;
 }
 
-.dish-name {
+.dish-info {
+  /* grid-row: 1 / 4;
+  grid-column: 2 / 5; */
+  grid-column: 2/5;
+  margin: 0%;
+  font-size: 15px;
+  color: #000000;
+  display: grid;
+}
+
+.single-dish-name {
+  display: grid;
   font-size: 25px;
 }

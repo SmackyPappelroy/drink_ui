@@ -40,7 +40,7 @@ function MobileNav({ isCollapsed, toggleCollapse, setToCollapse }) {
             icon={Icon.faMartiniGlassEmpty}
           />
           <NavItem
-            href="/meals"
+            href="/notfound"
             text="Meals"
             onClick={setToCollapse}
             icon={Icon.faChampagneGlasses}

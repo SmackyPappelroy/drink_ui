@@ -60,7 +60,7 @@ const Dish = () => {
         </h2>
       </div> */}
       <div className="dish-info">
-        <h1 className="dish-name">{myRecipe.title}</h1>
+        <h1 className="single-dish-name">{myRecipe.title}</h1>
       </div>
       <img className="image" src={myRecipe.image} alt={myRecipe.title} />
       <div className="dish-ingredients">
