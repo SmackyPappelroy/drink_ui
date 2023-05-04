@@ -99,49 +99,8 @@ const AppProvider = ({ children }) => {
     }
   })
 
-  const fetchDishtype = useCallback(async () => {
-    try {
-      console.log('fetching dishtypes')
-      const responsedishtypes = await fetch(dishtypesUrl, { headers })
-      const datadishtypes = await responsedishtypes.json()
-      const myDishtypes = datadishtypes
-      console.log(datadishtypes)
-      console.log(myDishtypes)
-      if (myDishtypes) {
-        const newDishtypes = myDishtypes.map((dishtype) => ({
-          id: dishtype.id,
-          cheap: dishtype.cheap,
-          cuisines: dishtype.cuisines,
-          dairyFree: dishtype.dairyFree,
-          dishTypes: dishtype.dishTypes,
-          drinks: dishtype.drinks,
-          extendedIngredients: dishtype.extendedIngredients,
-          glutenFree: dishtype.glutenFree,
-          image: dishtype.image,
-          ingredients: dishtype.ingredients,
-          instructions: dishtype.instructions,
-          ketogenic: dishtype.ketogenic,
-          readyInMinutes: dishtype.readyInMinutes,
-          servings: dishtype.servings,
-          title: dishtype.title,
-          vegan: dishtype.vegan,
-          vegetarian: dishtype.vegetarian,
-          veryHealthy: dishtype.veryHealthy,
-        }))
-        console.log(newDishtypes)
-        setDishtype(newDishtypes)
-        setLoading(false)
-      } else {
-        setRecipes([])
-      }
-    } catch (error) {
-      console.log(error)
-      setLoading(false)
-    }
-  })
-
   useEffect(() => {
-    fetchRecipes(), fetchDrinks(), fetchDishtype
+    fetchRecipes(), fetchDrinks()
   }, [])
   return (
     <AppContext.Provider
@@ -149,7 +108,6 @@ const AppProvider = ({ children }) => {
         loading,
         recipes,
         drinks,
-        dishtypes,
         isNavbarOpen,
         setIsNavbarOpen,
         isMobileSize,
