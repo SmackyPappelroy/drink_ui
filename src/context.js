@@ -21,7 +21,7 @@ const AppProvider = ({ children }) => {
   const [drinks, setDrinks] = useState([])
   const [selectedDrink, setSelectedDrink] = useState(null)
 
-  const [dishtype, setDishtype] = useState([])
+  const [dishtypes, setDishtype] = useState([])
   const [selectedDishtype, setSelectedDishtype] = useState(null)
 
   const apiKey = process.env.REACT_APP_API_KEY
@@ -108,28 +108,28 @@ const AppProvider = ({ children }) => {
       console.log(datadishtypes)
       console.log(myDishtypes)
       if (myDishtypes) {
-        const newDishtypes = myDishtypes.map((recipe) => ({
-          id: recipe.id,
-          cheap: recipe.cheap,
-          cuisines: recipe.cuisines,
-          dairyFree: recipe.dairyFree,
-          dishTypes: recipe.dishTypes,
-          drinks: recipe.drinks,
-          extendedIngredients: recipe.extendedIngredients,
-          glutenFree: recipe.glutenFree,
-          image: recipe.image,
-          ingredients: recipe.ingredients,
-          instructions: recipe.instructions,
-          ketogenic: recipe.ketogenic,
-          readyInMinutes: recipe.readyInMinutes,
-          servings: recipe.servings,
-          title: recipe.title,
-          vegan: recipe.vegan,
-          vegetarian: recipe.vegetarian,
-          veryHealthy: recipe.veryHealthy,
+        const newDishtypes = myDishtypes.map((dishtype) => ({
+          id: dishtype.id,
+          cheap: dishtype.cheap,
+          cuisines: dishtype.cuisines,
+          dairyFree: dishtype.dairyFree,
+          dishTypes: dishtype.dishTypes,
+          drinks: dishtype.drinks,
+          extendedIngredients: dishtype.extendedIngredients,
+          glutenFree: dishtype.glutenFree,
+          image: dishtype.image,
+          ingredients: dishtype.ingredients,
+          instructions: dishtype.instructions,
+          ketogenic: dishtype.ketogenic,
+          readyInMinutes: dishtype.readyInMinutes,
+          servings: dishtype.servings,
+          title: dishtype.title,
+          vegan: dishtype.vegan,
+          vegetarian: dishtype.vegetarian,
+          veryHealthy: dishtype.veryHealthy,
         }))
-        console.log(newRecipes)
-        setRecipes(newRecipes)
+        console.log(newDishtypes)
+        setDishtype(newDishtypes)
         setLoading(false)
       } else {
         setRecipes([])
@@ -141,7 +141,7 @@ const AppProvider = ({ children }) => {
   })
 
   useEffect(() => {
-    fetchRecipes(), fetchDrinks()
+    fetchRecipes(), fetchDrinks(), fetchDishtype
   }, [])
   return (
     <AppContext.Provider
@@ -149,6 +149,7 @@ const AppProvider = ({ children }) => {
         loading,
         recipes,
         drinks,
+        dishtypes,
         isNavbarOpen,
         setIsNavbarOpen,
         isMobileSize,

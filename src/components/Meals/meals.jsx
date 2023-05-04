@@ -118,9 +118,7 @@ const filterFood = (filter) => {
       <div className={isMobileSize ? 'card-mobiles' : 'cards'}>
         <div className="dishesTitle">
           <h2 className="fine-dine">
-            <div className="title-gray">FineDine</div>
-            <FontAwesomeIcon icon={Icon.faDrumstickBite} />
-            <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
+            <div className="title-gray">Meals</div>
           </h2>
           
           <form className="search" onSubmit={(e) => e.preventDefault()}>

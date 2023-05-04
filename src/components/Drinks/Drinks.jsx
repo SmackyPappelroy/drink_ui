@@ -85,9 +85,7 @@ const Drinks = () => {
       <div className={isMobileSize ? 'drinkscard-mobiles' : 'drinkscard'}>
         <div className="drinkscardTitle">
           <h2 className="fine-dine">
-            <div className="title-gray">FineDine</div>
-            <FontAwesomeIcon icon={Icon.faDrumstickBite} />
-            <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
+            <div className="title-gray">Drinks</div>
           </h2>
 
           <form className="search" onSubmit={(e) => e.preventDefault()}>
