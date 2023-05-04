@@ -5,6 +5,9 @@ const recipeUrl =
   'https://localhost:7001/get-recipes/page/1/pageSize/100?glutenFree=false&dairyFree=false&keto=false&vegetarian=false&vegan=false&cheap=false&veryHealthy=false'
 
 const drinksUrl = 'https://localhost:7001/get-drinks/page/1/pageSize/100'
+
+const dishtypesUrl = 'https://localhost:7001/get-dish/1'
+
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
@@ -17,6 +20,9 @@ const AppProvider = ({ children }) => {
 
   const [drinks, setDrinks] = useState([])
   const [selectedDrink, setSelectedDrink] = useState(null)
+
+  const [dishtype, setDishtype] = useState([])
+  const [selectedDishtype, setSelectedDishtype] = useState(null)
 
   const apiKey = process.env.REACT_APP_API_KEY
   const headers = {
@@ -62,6 +68,47 @@ const AppProvider = ({ children }) => {
       console.log(myRecipes)
       if (myRecipes) {
         const newRecipes = myRecipes.map((recipe) => ({
+          id: recipe.id,
+          cheap: recipe.cheap,
+          cuisines: recipe.cuisines,
+          dairyFree: recipe.dairyFree,
+          dishTypes: recipe.dishTypes,
+          drinks: recipe.drinks,
+          extendedIngredients: recipe.extendedIngredients,
+          glutenFree: recipe.glutenFree,
+          image: recipe.image,
+          ingredients: recipe.ingredients,
+          instructions: recipe.instructions,
+          ketogenic: recipe.ketogenic,
+          readyInMinutes: recipe.readyInMinutes,
+          servings: recipe.servings,
+          title: recipe.title,
+          vegan: recipe.vegan,
+          vegetarian: recipe.vegetarian,
+          veryHealthy: recipe.veryHealthy,
+        }))
+        console.log(newRecipes)
+        setRecipes(newRecipes)
+        setLoading(false)
+      } else {
+        setRecipes([])
+      }
+    } catch (error) {
+      console.log(error)
+      setLoading(false)
+    }
+  })
+
+  const fetchDishtype = useCallback(async () => {
+    try {
+      console.log('fetching dishtypes')
+      const responsedishtypes = await fetch(dishtypesUrl, { headers })
+      const datadishtypes = await responsedishtypes.json()
+      const myDishtypes = datadishtypes
+      console.log(datadishtypes)
+      console.log(myDishtypes)
+      if (myDishtypes) {
+        const newDishtypes = myDishtypes.map((recipe) => ({
           id: recipe.id,
           cheap: recipe.cheap,
           cuisines: recipe.cuisines,
