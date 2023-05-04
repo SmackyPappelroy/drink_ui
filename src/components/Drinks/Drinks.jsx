@@ -1,53 +1,107 @@
 import React, { PureComponent } from 'react'
 import PageHeader from '../PageHeader/pageHeader'
+import { useGlobalContext } from '../../context'
 import useNavbarDisplay from '../Navbar/CustomHooks/useNavbarDisplay'
-import '../Card.css'
 import '../../App.css'
+import '../Dishes/Dishes.css'
 import salmonwine from './MalbecRedWine.png'
+import SimpleDrinkCard from '../SimpleDrinkCard/SimpleDrinkCard'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import * as Icon from '@fortawesome/free-solid-svg-icons'
+
 const Drinks = () => {
     const isMobile = useNavbarDisplay()
-    return (
-      <div className={isMobile ? 'card-mobile' : 'card'}>
-        {isMobile ? (
-          <>
-            <h2>Drinks</h2>
-            <div className="infotext">
-              <p>
-                Our idea is try to find best combination of dishes that fit well
-                to certain drinks. wine with steak, chicken.{' '}
-              </p>
-              <p> Some special dishes that fit well to certain drink.</p>
-              <br></br>
-              <img src={salmonwine} alt="my-gif" className="drink" />
-              <img src={salmonwine} alt="my-gif" className="drink" />
-              <img src={salmonwine} alt="my-gif" className="drink" />
-              <img src={salmonwine} alt="my-gif" className="drink" />
-            </div>
-          </>
+    const { drinks, loading, isMobileSize } = useGlobalContext()
+    const [start, setStart] = React.useState(0)
+    const [end, setEnd] = React.useState(10)
+
+    const increment = () => {
+      setStart(start + 10)
+      setEnd(end + 10)
+      if (end >= drinks.length) {
+        setStart(drinks.length - 10)
+        setEnd(drinks.length)
+      }
+    }
+
+    const decrement = () => {
+      setStart(start - 10)
+      setEnd(end - 10)
+      if (start <= 0) {
+        setStart(0)
+        setEnd(10)
+      }
+    }
+
+    const changePage = (index) => {
+      setStart(index)
+      setEnd(index + 10)
+    }
+
+    if (loading) {
+      return <h1 className="infotext">Laddar...</h1>
+    } else {
+      return (
+        <div className={isMobileSize ? 'dishes-mobile' : 'dishes'}>
+          <div className="dishesTitle">
+            <h2 className="fine-dine">
+              <div className="title-gray">FineDine</div>
+              <FontAwesomeIcon icon={Icon.faDrumstickBite} />
+              <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
+            </h2>
+          </div>
+
+        {drinks.length > 0 ? (
+          drinks.slice(start,end).map((drink) => {
+            return(
+              <SimpleDrinkCard
+                key={drink.id}
+                className="simpleDishCard"
+                image={drink.image}
+                title={drink.name}
+                id={drink.id}
+              />
+            )
+          })
         ) : (
-          <>
-            <PageHeader iconSize="3x" titleSize="50px" /> <h2>Drinks</h2>{' '}
-            <div className="infotext">
-              <p>
-                Our idea is try to find best combonation of dishes that fit well
-                to certain drinks. wine with steak, chicken.{' '}
-              </p>
-              <p> Some special dishes that fit well to certain drink.</p>
-              <div className='Content'>
-                <img src={salmonwine} alt="my-gif" className="drink" />
-                <img src={salmonwine} alt="my-gif" className="drink" />
-                <img src={salmonwine} alt="my-gif" className="drink" />
-                <img src={salmonwine} alt="my-gif" className="drink" />
-                <img src={salmonwine} alt="my-gif" className="drink" />
-                <img src={salmonwine} alt="my-gif" className="drink" />
-                <img src={salmonwine} alt="my-gif" className="drink" />
-                <img src={salmonwine} alt="my-gif" className="drink" />
-            </div>
-            </div>
-          </>
+          <h1 className="dishinfotext">Hittade inga drinkar</h1>
         )}
-      </div>
-    )
+
+          <button
+            className={drinks.length > 10 ? 'button' : 'hidden'}
+            onClick={() => decrement()}
+          >
+            Previous
+          </button>
+  
+          <div className={drinks.length > 10 ? 'page' : 'hidden'}>
+            <p>
+              {start + 1} - {end} av {drinks.length}
+            </p>
+            <div className="dots">
+              {drinks.length > 10 &&
+                Array.from(
+                  { length: Math.ceil(drinks.length / 10) },
+                  (_, i) => (
+                    <span
+                      key={i}
+                      onClick={() => changePage(i * 10)}
+                      className={i * 10 === start ? 'dot-active' : 'dot'}
+                    ></span>
+                  )
+                )}
+            </div>
+          </div>
+  
+          <button
+            className={drinks.length > 10 ? 'button' : 'hidden'}
+            onClick={() => increment()}
+          >
+            Next
+          </button>
+        </div>
+      )
+    }
   }
 
   export default Drinks

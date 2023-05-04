@@ -1,8 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { useCallback } from 'react'
 
+const drinkUrl = 'https://finediningappapi.azurewebsites.net/get-drinks/page/1/pageSize/100'
+
 const recipeUrl =
-  'https://localhost:7001/get-recipes/page/1/pageSize/100?glutenFree=false&dairyFree=false&keto=false&vegetarian=false&vegan=false&cheap=false&veryHealthy=false'
+  'https://finediningappapi.azurewebsites.net/get-recipes/page/1/pageSize/100?glutenFree=false&dairyFree=false&keto=false&vegetarian=false&vegan=false&cheap=false&veryHealthy=false'
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
@@ -11,6 +13,7 @@ const AppProvider = ({ children }) => {
   const [isMobileSize, setIsMobileSize] = useState(false)
 
   const [recipes, setRecipes] = useState([])
+  const [drinks, setDrinks] = useState([])
   const [selectedRecipe, setSelectedRecipe] = useState(null)
 
   const apiKey = process.env.REACT_APP_API_KEY
@@ -60,14 +63,44 @@ const AppProvider = ({ children }) => {
     }
   })
 
+  const fetchDrinks = useCallback(async () => {
+    try {
+      console.log('fetching drinks')
+      const response = await fetch(drinkUrl, { headers })
+      const data = await response.json()
+      const myDrinks = data
+      console.log(data)
+      console.log(myDrinks)
+      if (myDrinks) {
+        const newDrinks = myDrinks.map((drink) => ({
+          id: drink.id,
+          name: drink.name,
+          image: drink.image,
+          description: drink.description,
+          drinkType: drink.drinkType,
+        }))
+        console.log(newDrinks)
+        setDrinks(newDrinks)
+        setLoading(false)
+      } else {
+        setDrinks([])
+      }
+    } catch (error) {
+      console.log(error)
+      setLoading(false)
+    }
+  })
+
   useEffect(() => {
     fetchRecipes()
+    fetchDrinks()
   }, [])
   return (
     <AppContext.Provider
       value={{
         loading,
         recipes,
+        drinks,
         isNavbarOpen,
         setIsNavbarOpen,
         isMobileSize,
