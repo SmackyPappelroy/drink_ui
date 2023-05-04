@@ -1,154 +1,161 @@
 .drinkscard {
-    position: flex;
-    padding: 20px;
-    margin:2% 6%;
-    width: 90%;
-    height: auto;
-    max-height: 120%;
-    left:10%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 20px;
-  }
-  .drinkscard-mobile {
-    position: absolute;
-    padding: 20px;
-    margin-top: 1%;
-    margin-bottom: 2%;
-    margin-left: 5px;
-    height: auto;
-    width: 98%;
-    left: 0%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 20px;
-  }
-  .drinkscardTitle {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-template-areas: '. .';
-    font-size: 30px;
-    font-weight: 600;
-    width: 100%;
-    align-items: start;
-  }
-  
-  .search {
-    grid-column: 2;
-  }
-  
-  .search form {
-    width: 100%;
-  }
-  
-  .search input {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
-  }
-  
-  .search input:focus {
-    border-color: #1e90ff;
-    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
-  }
-  
-  .search input::placeholder {
-    color: #888;
-  }
-  
-  .search input:-ms-input-placeholder {
-    color: #888;
-  }
-  
-  .search input::-ms-input-placeholder {
-    color: #888;
-  }
-  
-  .fine-dine {
-    grid-row: 1;
-    grid-column: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: left;
-    justify-content: left;
-    margin-right: 2px;
-    font-weight: bold;
-    font-size: 45px;
-  }
-  
-  .icons {
-    grid-row: 1;
-    grid-column: 3;
-    gap: 2px;
-    display: flex;
-    flex-direction: row;
-    align-items: right;
-    justify-content: right;
-    margin-left: 2px;
-  }
-  .icon-clicked {
-    color: #000000;
-    margin-right: 4px;
-  }
-  .icon-unclicked {
-    color: #818181;
-    margin-right: 4px;
-  }
-  .hidden {
-    display: none;
-  }
-  
-  .h1.infotext {
-    /* display center screen */
-    width: auto;
-    height: auto;
-    max-height: 50px !important;
-    font-weight: 400;
-    color: red;
-  }
-  .dots {
-    position: center;
-    gap: 4px;
-    margin: 10px;
-    width: 200px;
-    height: 30px;
-    background-color: #f2f2f2;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    overflow: hidden;
-  }
-  .dot {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: #333;
-  }
-  .dot-active {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: #98a7ff;
-  }
-  .page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
+  position: flex;
+  padding: 20px;
+  margin: 2% 6%;
+  width: 90%;
+  height: auto;
+  max-height: 120%;
+  left: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.drinkscard-mobile {
+  position: absolute;
+  padding: 20px;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  margin-left: 5px;
+  height: auto;
+  width: 98%;
+  left: 0%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.drinkscardTitle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: '. .';
+  font-weight: 600;
+  width: 100%;
+  align-items: start;
+}
+
+.search {
+  grid-column: 2;
+}
+
+.search form {
+  width: 100%;
+}
+
+.search input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search input:focus {
+  border-color: #1e90ff;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
+
+.search input::placeholder {
+  color: #888;
+}
+
+.search input:-ms-input-placeholder {
+  color: #888;
+}
+
+.search input::-ms-input-placeholder {
+  color: #888;
+}
+
+.fine-dine {
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+  margin-right: 2px;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.icons {
+  grid-row: 1;
+  grid-column: 3;
+  gap: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right;
+  margin-left: 2px;
+}
+
+.icon-clicked {
+  color: #000000;
+  margin-right: 4px;
+}
+
+.icon-unclicked {
+  color: #818181;
+  margin-right: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.h1.infotext {
+  /* display center screen */
+  width: auto;
+  height: auto;
+  max-height: 50px !important;
+  font-weight: 400;
+  color: red;
+}
+
+.dots {
+  position: center;
+  gap: 4px;
+  margin: 10px;
+  width: 200px;
+  height: 30px;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+.dot-active {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #98a7ff;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
