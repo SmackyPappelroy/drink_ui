@@ -123,7 +123,7 @@ function Dishes() {
   } else {
     console.log(filteredRecipes.length)
     return (
-      <div className={isMobileSize ? 'dishes-mobile' : 'dishes'}>
+      <div className={isMobileSize ? 'dishcards-mobile' : 'dishcards'}>
         <div className="dishesTitle">
           <div className="page-header-wrapper">
             {isMobile ? <></> : <PageHeader iconSize="2x"></PageHeader>}

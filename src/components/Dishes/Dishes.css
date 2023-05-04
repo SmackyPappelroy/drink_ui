@@ -1,4 +1,4 @@
-.dishes {
+.dishcards {
   position: flex;
     padding: 20px;
     margin:2% 6%;
@@ -14,7 +14,7 @@
     border-radius: 20px;
 }
 
-.dishes-mobile {
+.dishcards-mobile {
   position: absolute;
   padding: 20px;
   margin-top: 1%;
