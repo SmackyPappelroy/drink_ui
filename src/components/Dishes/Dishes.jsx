@@ -123,12 +123,11 @@ function Dishes() {
   } else {
     console.log(filteredRecipes.length)
     return (
-      <div className={isMobileSize ? 'dishcards-mobile' : 'dishcards'}>
+      <div className={isMobileSize ? 'dishes-mobile' : 'dishes'}>
         <div className="dishesTitle">
-        <h2 className="fine-dine">
-            <div className="title-gray">Dishes</div>
-          </h2>
-          
+          <div className="page-header-wrapper">
+            {isMobile ? <></> : <PageHeader iconSize="2x"></PageHeader>}
+          </div>
           <form className="search" onSubmit={(e) => e.preventDefault()}>
             <input
               type="text"
