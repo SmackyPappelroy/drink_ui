@@ -11,18 +11,21 @@
   border-radius: 20px;
   height: 80%;
   margin: 50px auto;
+  position: fixed;
 }
 
 .card-mobile {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   justify-content: space-between;
   background-color: white;
   border-radius: 20px;
   width: 90%;
-  margin: 20px auto;
+  height: 75%;
+  margin: 20px 20px;
+  position: fixed;
 }
 
 .icon {

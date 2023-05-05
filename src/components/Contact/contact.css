@@ -12,12 +12,12 @@
 
 .images-container img.mobiledrink {
        flex-basis: calc(33.33% - 20px);
-       margin: 10px;
        height: auto;
        object-fit: fill;
-       min-width: 150px;
-       height: 200px;
-       max-width: 150px;
+       height: 100px;
+       max-width: 75px;
+       position: flex;
+       margin:15% 5%;
 
 }
 

@@ -85,7 +85,6 @@ const Drinks = () => {
       <div className={isMobileSize ? "drinkscard-mobiles" : "drinkscard"}>
         <div className="drinkscardTitle">
           {isMobile ? <></> : <PageHeader />}
-
           <form className="search" onSubmit={(e) => e.preventDefault()}>
             <input
               drink="text"

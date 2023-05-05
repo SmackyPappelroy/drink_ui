@@ -5,6 +5,9 @@ const recipeUrl =
   'https://localhost:7001/get-recipes/page/1/pageSize/100?glutenFree=false&dairyFree=false&keto=false&vegetarian=false&vegan=false&cheap=false&veryHealthy=false'
 
 const drinksUrl = 'https://localhost:7001/get-drinks/page/1/pageSize/100'
+
+const dishtypesUrl = 'https://localhost:7001/get-dish/1'
+
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
@@ -17,6 +20,9 @@ const AppProvider = ({ children }) => {
 
   const [drinks, setDrinks] = useState([])
   const [selectedDrink, setSelectedDrink] = useState(null)
+
+  const [dishtypes, setDishtype] = useState([])
+  const [selectedDishtype, setSelectedDishtype] = useState(null)
 
   const apiKey = process.env.REACT_APP_API_KEY
   const headers = {
