@@ -5,13 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Icon from '@fortawesome/free-solid-svg-icons'
 import '../../App.css'
 import { Link } from 'react-router-dom'
+import useNavbarDisplay from '../Navbar/CustomHooks/useNavbarDisplay'
 
 const findDrinkById = (drinks, id) => {
   return drinks.find((drink) => drink.id === parseInt(id))
 }
 
 const fetchDishFromDrinkApi = async (id) => {
-  const url = `https://localhost:7001/get-from-drink/${id}`
+  const url = `https://finediningappapi.azurewebsites.net/get-from-drink/${id}`
   const response = await fetch(url)
   const data = await response.json()
   console.log(data)
@@ -19,12 +20,40 @@ const fetchDishFromDrinkApi = async (id) => {
   return data
 }
 
+const drinkTypeMapping = {
+  1: 'condiment',
+  2: 'dip',
+  3: 'spread',
+  4: 'morning meal',
+  5: 'brunch',
+  6: 'breakfast',
+  7: 'side dish',
+  8: 'dessert',
+  9: 'bread',
+  10: 'antipasti',
+  11: 'starter',
+  12: 'snack',
+  13: 'appetizer',
+  14: 'antipasto',
+  15: "hor d'oeuvre",
+  16: 'lunch',
+  17: 'main course',
+  18: 'main dish',
+  19: 'dinner',
+  20: 'soup',
+  21: 'fingerfood',
+  22: 'salad',
+  23: 'beverage',
+  24: 'drink',
+  25: 'sauce',
+}
+
 const Drink = () => {
   const [myDrinks, setMyDrink] = React.useState(null)
   const [dishes, setDishes] = React.useState([])
-//   const [dishes, setDishes] = React.useState([])
   const id = window.location.pathname.split('/')[2]
-  const { drinks, loading, isMobileSize } = useGlobalContext()
+  const { drinks, loading } = useGlobalContext()
+  const isMobileSize = useNavbarDisplay()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,20 +76,12 @@ const Drink = () => {
 
   return (
     <div className={isMobileSize ? 'drink-mobile' : 'drinkcard'}>
-      <div className="drink-title">
-        {/* <h2 className="fine-dine">
-          <div className="title-gray">FineDine</div>
-          <FontAwesomeIcon icon={Icon.faDrumstickBite} />
-          <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
-        </h2> */}
-      </div>
-
       <div className="drink-info">
         <h1 className="drink-name">{myDrinks.name}</h1>
       </div>
-      <img className="image" src={myDrinks.image} alt={myDrinks.name} />
+      <img className="drink-image" src={myDrinks.image} alt={myDrinks.name} />
       <div className="drink-description">
-        <h3>Description</h3>
+        <h3>Beskrivning</h3>
         {myDrinks.description ? (
           <ul>
             {myDrinks.description.split('*').map((description, index) => (
@@ -68,25 +89,19 @@ const Drink = () => {
             ))}
           </ul>
         ) : (
-          <p>Hittade inga description.</p>
+          <p>Hittade ingen beskrivning.</p>
         )}
       </div>
 
       <div className="drink-drinkType">
-        <h3>Drink Type:</h3>
+        <h3>Drinktyp:</h3>
         {myDrinks.drinkType ? (
-          <div
-            dangerouslySetInnerHTML={{
-              __html:
-                myDrinks.drinkType.length > 800
-                  ? myDrinks.drinkType.substring(0, 800) + '...'
-                  : myDrinks.drinkType,
-            }}
-          ></div>
+          <div>{drinkTypeMapping[myDrinks.drinkType]}</div>
         ) : (
           <p>Hittade inga type.</p>
         )}
       </div>
+
       <h2 className="dish-headline">Rekommenderad rätter</h2>
       <div className="dishescard">
         {dishes.dishes
@@ -99,7 +114,7 @@ const Drink = () => {
                     alt={dish.name}
                   />
                   <Link>
-                  <h4 className="dish-name">{dish.name}</h4>
+                    <h4 className="dish-name">{dish.name}</h4>
                   </Link>
                 </div>
               )

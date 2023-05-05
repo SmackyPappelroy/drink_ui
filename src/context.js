@@ -2,11 +2,12 @@ import React, { useState, useContext, useEffect } from 'react'
 import { useCallback } from 'react'
 
 const recipeUrl =
-  'https://localhost:7001/get-recipes/page/1/pageSize/100?glutenFree=false&dairyFree=false&keto=false&vegetarian=false&vegan=false&cheap=false&veryHealthy=false'
+  'https://finediningappapi.azurewebsites.net/get-recipes/page/1/pageSize/100?glutenFree=false&dairyFree=false&keto=false&vegetarian=false&vegan=false&cheap=false&veryHealthy=false'
 
-const drinksUrl = 'https://localhost:7001/get-drinks/page/1/pageSize/100'
+const drinksUrl =
+  'https://finediningappapi.azurewebsites.net/get-drinks/page/1/pageSize/100'
 
-const dishtypesUrl = 'https://localhost:7001/get-dish/1'
+const dishtypesUrl = 'https://finediningappapi.azurewebsites.net/get-dish/1'
 
 const AppContext = React.createContext()
 
@@ -100,8 +101,7 @@ const AppProvider = ({ children }) => {
   })
 
   useEffect(() => {
-    fetchRecipes() &&
-      fetchDrinks()
+    fetchRecipes() && fetchDrinks()
   }, [])
   return (
     <AppContext.Provider
