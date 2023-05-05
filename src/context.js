@@ -100,7 +100,8 @@ const AppProvider = ({ children }) => {
   })
 
   useEffect(() => {
-    fetchRecipes(), fetchDrinks()
+    fetchRecipes() &&
+      fetchDrinks()
   }, [])
   return (
     <AppContext.Provider

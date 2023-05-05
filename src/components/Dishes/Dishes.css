@@ -1,17 +1,14 @@
-.dishcards {
-  position: flex;
-    padding: 20px;
-    margin:2% 6%;
-    width: 90%;
-    height: auto;
-    max-height: 120%;
-    left:10%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 20px;
+.dishes {
+  padding: 10px 30px;
+  margin: 50px auto;
+  width: 75%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 20px;
 }
 
 .dishcards-mobile {
@@ -42,9 +39,6 @@
   align-items: start;
 }
 
-.dishesTitle .page-header {
-  margin-top: 0;
-}
 
 .search {
   grid-column: 2;

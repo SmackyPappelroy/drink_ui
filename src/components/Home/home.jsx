@@ -6,11 +6,10 @@ const Home = () => {
   return (
     <>
       {isMobile ? (
-        <h2>Home</h2>
+        <></>
       ) : (
         <>
-          {" "}
-          <PageHeader iconSize="3x" titleSize="4.5rem" /> <h2>Home</h2>{" "}
+          <PageHeader iconSize="3x" titleSize="4.5rem" />
         </>
       )}
     </>

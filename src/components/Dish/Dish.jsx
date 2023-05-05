@@ -1,64 +1,56 @@
-import React, { useEffect } from 'react'
-import { useGlobalContext } from '../../context'
-import './Dish.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import * as Icon from '@fortawesome/free-solid-svg-icons'
-import '../../App.css'
-import { Link } from 'react-router-dom'
-import PageHeader from '../PageHeader/pageHeader'
+import React, { useEffect } from "react";
+import { useGlobalContext } from "../../context";
+import "./Dish.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as Icon from "@fortawesome/free-solid-svg-icons";
+import "../../App.css";
+import { Link } from "react-router-dom";
+import PageHeader from "../PageHeader/pageHeader";
+import useNavbarDisplay from "../Navbar/CustomHooks/useNavbarDisplay";
 
 const findRecipeById = (recipes, id) => {
-  return recipes.find((recipe) => recipe.id === parseInt(id))
-}
+  return recipes.find((recipe) => recipe.id === parseInt(id));
+};
 
 const fetchDrinkFromRecipeApi = async (id) => {
-  const url = `https://localhost:7001/get-dish/${id}`
-  const response = await fetch(url)
-  const data = await response.json()
-  console.log(data)
+  const url = `https://localhost:7001/get-dish/${id}`;
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
 
-  return data
-}
+  return data;
+};
 
 const Dish = () => {
-  const [myRecipe, setMyRecipe] = React.useState(null)
-  const [drinks, setDrinks] = React.useState([])
-  const id = window.location.pathname.split('/')[2]
-  const { recipes, loading, isMobileSize } = useGlobalContext()
+  const isMobile = useNavbarDisplay();
+  const [myRecipe, setMyRecipe] = React.useState(null);
+  const [drinks, setDrinks] = React.useState([]);
+  const id = window.location.pathname.split("/")[2];
+  const { recipes, loading, isMobileSize } = useGlobalContext();
 
   useEffect(() => {
     const fetchData = async () => {
-      const recipe = findRecipeById(recipes, id)
-      const myDrinks = await fetchDrinkFromRecipeApi(id)
-      setDrinks(myDrinks)
-      setMyRecipe(recipe)
-      console.log(drinks)
-    }
-    fetchData()
-  }, [id, recipes])
+      const recipe = findRecipeById(recipes, id);
+      const myDrinks = await fetchDrinkFromRecipeApi(id);
+      setDrinks(myDrinks);
+      setMyRecipe(recipe);
+      console.log(drinks);
+    };
+    fetchData();
+  }, [id, recipes]);
 
   if (loading || !recipes || !recipes.length || !id || !myRecipe) {
-    return <h1 className="loading"></h1>
+    return <h1 className="loading"></h1>;
   }
 
   if (!myRecipe) {
-    return null
+    return null;
   }
 
   return (
-    <div className={isMobileSize ? 'dish-mobile' : 'dish'}>
-      {isMobileSize ? (
-        <></>
-      ) : (
-        <PageHeader titleSize="3.5rem" iconSize="5x"></PageHeader>
-      )}
-      {/* <div className="dish-title">
-        <h2 className="fine-dine">
-          <div className="title-gray">FineDine</div>
-          <FontAwesomeIcon icon={Icon.faDrumstickBite} />
-          <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
-        </h2>
-      </div> */}
+    <div className={isMobileSize ? "dish-mobile" : "dish"}>
+      {isMobile ? <></> :<div className="page-header-wrapper" ><PageHeader /></div>}
+
       <div className="dish-info">
         <h1 className="single-dish-name">{myRecipe.title}</h1>
       </div>
@@ -67,7 +59,7 @@ const Dish = () => {
         <h3>Ingredienser</h3>
         {myRecipe.ingredients ? (
           <ul>
-            {myRecipe.ingredients.split('*').map((ingredient, index) => (
+            {myRecipe.ingredients.split("*").map((ingredient, index) => (
               <li key={index}>{ingredient.trim()}</li>
             ))}
           </ul>
@@ -79,14 +71,14 @@ const Dish = () => {
       <div className="dish-instructions">
         <h3>Instruktioner</h3>
         {myRecipe.instructions ? (
-          <div
+          <p
             dangerouslySetInnerHTML={{
               __html:
                 myRecipe.instructions.length > 800
-                  ? myRecipe.instructions.substring(0, 800) + '...'
+                  ? myRecipe.instructions.substring(0, 800) + "..."
                   : myRecipe.instructions,
             }}
-          ></div>
+          ></p>
         ) : (
           <p>Hittade inga instruktioner.</p>
         )}
@@ -106,12 +98,12 @@ const Dish = () => {
                     <h4 className="drink-name">{drink.name}</h4>
                   </Link>
                 </div>
-              )
+              );
             })
-          : 'Hittade inga rekommenderade drycker.'}
+          : "Hittade inga rekommenderade drycker."}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Dish
+export default Dish;
