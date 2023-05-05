@@ -1,55 +1,55 @@
-import React, { PureComponent } from 'react'
-import PageHeader from '../PageHeader/pageHeader'
-import useNavbarDisplay from '../Navbar/CustomHooks/useNavbarDisplay'
-import '../Card.css'
-import '../../App.css'
-import './Drinks.css'
-import { useGlobalContext } from '../../context'
-import SimpleDrinkCard from '../SimpleDrinkCard/SimpleDrinkCard'
-import { useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import * as Icon from '@fortawesome/free-solid-svg-icons'
-import drink from '../Drink/Drink'
+import React, { PureComponent } from "react";
+import PageHeader from "../PageHeader/pageHeader";
+import useNavbarDisplay from "../Navbar/CustomHooks/useNavbarDisplay";
+import "../Card.css";
+import "../../App.css";
+import "./Drinks.css";
+import { useGlobalContext } from "../../context";
+import SimpleDrinkCard from "../SimpleDrinkCard/SimpleDrinkCard";
+import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as Icon from "@fortawesome/free-solid-svg-icons";
+import drink from "../Drink/Drink";
 
 const Drinks = () => {
-  const { drinks, loading, isMobileSize } = useGlobalContext()
-  const [start, setStart] = React.useState(0)
-  const [end, setEnd] = React.useState(10)
-  const [filteredDrinks, setFilteredDrinks] = React.useState([])
+  const { drinks, loading, isMobileSize } = useGlobalContext();
+  const [start, setStart] = React.useState(0);
+  const [end, setEnd] = React.useState(10);
+  const [filteredDrinks, setFilteredDrinks] = React.useState([]);
 
-  const [searchTerm, setSearchTerm] = React.useState('')
+  const [searchTerm, setSearchTerm] = React.useState("");
 
   const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value)
-    performSearch(e.target.value)
-  }
+    setSearchTerm(e.target.value);
+    performSearch(e.target.value);
+  };
 
   const performSearch = (query) => {
     const filtered = drinks.filter((drink) => {
       if (drink.title.toLowerCase().includes(query.toLowerCase())) {
-        return true
+        return true;
       }
-      return false
-    })
-    setFilteredDrinks(filtered)
-  }
+      return false;
+    });
+    setFilteredDrinks(filtered);
+  };
 
   const increment = () => {
-    setStart(start + 10)
-    setEnd(end + 10)
+    setStart(start + 10);
+    setEnd(end + 10);
     if (end >= drinks.length) {
-      setStart(drinks.length - 10)
-      setEnd(drinks.length)
+      setStart(drinks.length - 10);
+      setEnd(drinks.length);
     }
-  }
+  };
   const decrement = () => {
-    setStart(start - 10)
-    setEnd(end - 10)
+    setStart(start - 10);
+    setEnd(end - 10);
     if (start <= 0) {
-      setStart(0)
-      setEnd(10)
+      setStart(0);
+      setEnd(10);
     }
-  }
+  };
 
   const updateFilteredDrinks = async () => {
     const filtered = drinks.filter((drink) => {
@@ -57,38 +57,34 @@ const Drinks = () => {
         searchTerm &&
         !drink.name.toLowerCase().includes(searchTerm.toLowerCase())
       )
-        return false
-      return true
-    })
-    console.log(filtered.length)
-    setFilteredDrinks(filtered.length > 0 ? filtered : [])
-  }
+        return false;
+      return true;
+    });
+    console.log(filtered.length);
+    setFilteredDrinks(filtered.length > 0 ? filtered : []);
+  };
 
   //     const [breakfast, setBreakfast] = React.useState(false);
   // const [lunch, setLunch] = useState(false);
   // const [dinner, setDinner] = useState(false);
 
   useEffect(() => {
-    setFilteredDrinks(drinks)
-  }, [drinks])
+    setFilteredDrinks(drinks);
+  }, [drinks]);
 
   const changePage = (index) => {
-    setStart(index)
-    setEnd(index + 10)
-  }
-
+    setStart(index);
+    setEnd(index + 10);
+  };
+  const isMobile = useNavbarDisplay();
   if (loading) {
-    return <h1 className="infotext">Laddar...</h1>
+    return <h1 className="infotext">Laddar...</h1>;
   } else {
-    console.log(filteredDrinks.length)
+    console.log(filteredDrinks.length);
     return (
-      <div className={isMobileSize ? 'drinkscard-mobiles' : 'drinkscard'}>
+      <div className={isMobileSize ? "drinkscard-mobiles" : "drinkscard"}>
         <div className="drinkscardTitle">
-          <h2 className="fine-dine">
-            <div className="title-gray">FineDine</div>
-            <FontAwesomeIcon icon={Icon.faDrumstickBite} />
-            <FontAwesomeIcon icon={Icon.faChampagneGlasses} />
-          </h2>
+          {isMobile ? <></> : <PageHeader />}
 
           <form className="search" onSubmit={(e) => e.preventDefault()}>
             <input
@@ -109,19 +105,19 @@ const Drinks = () => {
                 name={drink.name}
                 id={drink.id}
               />
-            )
+            );
           })
         ) : (
           <h1 className="infotext">Hittade inga recept</h1>
         )}
         <button
-          className={filteredDrinks.length > 10 ? 'button' : 'hidden'}
+          className={filteredDrinks.length > 10 ? "button" : "hidden"}
           onClick={() => decrement()}
         >
           Previous
         </button>
 
-        <div className={filteredDrinks.length > 10 ? 'page' : 'hidden'}>
+        <div className={filteredDrinks.length > 10 ? "page" : "hidden"}>
           <p>
             {start + 1} - {end} av {filteredDrinks.length}
           </p>
@@ -133,7 +129,7 @@ const Drinks = () => {
                   <span
                     key={i}
                     onClick={() => changePage(i * 10)}
-                    className={i * 10 === start ? 'dot-active' : 'dot'}
+                    className={i * 10 === start ? "dot-active" : "dot"}
                   ></span>
                 )
               )}
@@ -141,14 +137,14 @@ const Drinks = () => {
         </div>
 
         <button
-          className={filteredDrinks.length > 10 ? 'button' : 'hidden'}
+          className={filteredDrinks.length > 10 ? "button" : "hidden"}
           onClick={() => increment()}
         >
           Next
         </button>
       </div>
-    )
+    );
   }
-}
+};
 
-export default Drinks
+export default Drinks;
