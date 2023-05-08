@@ -1,7 +1,7 @@
 .card {
   padding: 10px 30px;
-  bottom: 7%;
-  width: 75%;
+  bottom: 70%;
+  width: 55%;
   left: 10%;
   display: flex;
   flex-wrap: wrap;
@@ -9,9 +9,9 @@
   justify-content: space-between;
   background-color: white;
   border-radius: 20px;
-  height: 80%;
+  height: 30%;
   margin: 50px auto;
-  position: fixed;
+  position: flex;
 }
 
 .card-mobile {
@@ -25,7 +25,7 @@
   width: 90%;
   height: 75%;
   margin: 20px 20px;
-  position: fixed;
+  position: flex;
 }
 
 .icon {
@@ -85,14 +85,14 @@
 
 .infotext {
   /* display center screen */
-  width: auto;
+  /* width: auto;
   height: auto;
   font-weight: 400;
   padding-bottom: 90%;
   top: 30%;
   left: 40%;
   color: red;
-  flex: 0 1 100%;
+  flex: 0 1 100%; */
 }
 
 .title {

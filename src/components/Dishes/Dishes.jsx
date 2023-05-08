@@ -125,9 +125,9 @@ function Dishes() {
     return (
       <div className={isMobileSize ? 'dishes-mobile' : 'dishes'}>
         <div className="dishesTitle">
-          <div className="page-header-wrapper">
-            {isMobile ? <></> : <PageHeader iconSize="2x"></PageHeader>}
-          </div>
+        <h2 className="fine-dine">
+            <div className="title-gray">Dishes</div>
+          </h2>
           <form className="search" onSubmit={(e) => e.preventDefault()}>
             <input
               type="text"
