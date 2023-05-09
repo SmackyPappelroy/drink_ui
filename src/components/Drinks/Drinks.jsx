@@ -26,7 +26,7 @@ const Drinks = () => {
 
   const performSearch = (query) => {
     const filtered = drinks.filter((drink) => {
-      if (drink.title.toLowerCase().includes(query.toLowerCase())) {
+      if (drink.name.toLowerCase().includes(query.toLowerCase())) {
         return true
       }
       return false
