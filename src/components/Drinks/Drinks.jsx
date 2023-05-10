@@ -26,7 +26,7 @@ const Drinks = () => {
 
   const performSearch = (query) => {
     const filtered = drinks.filter((drink) => {
-      if (drink.title.toLowerCase().includes(query.toLowerCase())) {
+      if (drink.name.toLowerCase().includes(query.toLowerCase())) {
         return true
       }
       return false
@@ -78,13 +78,16 @@ const Drinks = () => {
   }
   const isMobile = useNavbarDisplay()
   if (loading) {
-    return <h1 className="infotext">Laddar...</h1>
+    return <h1 className="infotext">Laddar...</h1>;
   } else {
-    console.log(filteredDrinks.length)
+    console.log(filteredDrinks.length);
     return (
-      <div className={isMobileSize ? 'drinkscard-mobiles' : 'drinkscard'}>
+      <div className={isMobileSize ? "drinkscard-mobile" : "drinkscard"}>
         <div className="drinkscardTitle">
-          {isMobile ? <></> : <PageHeader />}
+          <h2 className="fine-dine">
+            <div className="title-gray">Drinks</div>
+          </h2>
+
           <form className="search" onSubmit={(e) => e.preventDefault()}>
             <input
               drink="text"
@@ -104,19 +107,19 @@ const Drinks = () => {
                 name={drink.name}
                 id={drink.id}
               />
-            )
+            );
           })
         ) : (
           <h1 className="infotext">Hittade inga recept</h1>
         )}
         <button
-          className={filteredDrinks.length > 10 ? 'button' : 'hidden'}
+          className={filteredDrinks.length > 10 ? "button" : "hidden"}
           onClick={() => decrement()}
         >
           Previous
         </button>
 
-        <div className={filteredDrinks.length > 10 ? 'page' : 'hidden'}>
+        <div className={filteredDrinks.length > 10 ? "page" : "hidden"}>
           <p>
             {start + 1} - {end} av {filteredDrinks.length}
           </p>
@@ -128,7 +131,7 @@ const Drinks = () => {
                   <span
                     key={i}
                     onClick={() => changePage(i * 10)}
-                    className={i * 10 === start ? 'dot-active' : 'dot'}
+                    className={i * 10 === start ? "dot-active" : "dot"}
                   ></span>
                 )
               )}
@@ -136,14 +139,17 @@ const Drinks = () => {
         </div>
 
         <button
-          className={filteredDrinks.length > 10 ? 'button' : 'hidden'}
+          className={filteredDrinks.length > 10 ? "button" : "hidden"}
           onClick={() => increment()}
         >
           Next
         </button>
       </div>
-    )
+    );
   }
-}
 
-export default Drinks
+}
+export default Drinks;
+
+
+

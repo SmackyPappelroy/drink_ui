@@ -56,15 +56,15 @@
 }
 
 .drinks {
-  grid-row: 5;
-  grid-column: 1 / -1;
+  /* grid-row: 5; */
+  /* grid-column: 1 / -1; */
   display: flex;
   font-size: 20px;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   font-weight: bold;
   color: #000000;
-  gap: 5px;
+  gap: 30px;
   position: flex;
 }
 
@@ -213,9 +213,8 @@
   object-fit: cover;
   border-radius: 40px;
   max-width: 600px;
-  min-width: 50%;
+  min-width: 100%;
   flex: 1 0 60%;
-  max-width: 50%;
   margin: 0 !important;
 }
 

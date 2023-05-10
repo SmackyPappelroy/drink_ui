@@ -7,6 +7,9 @@ import cheerschampagne from "./cheerschampagne.gif";
 import cheersbeer from "./cheersbeer.gif";
 import cheerswine from "./cheerswine.gif";
 import "./contact.css";
+import { ContactForm } from "./contactForm";
+import * as FaIcons from "react-icons/fa"
+
 const Contact = () => {
   const isMobile = useNavbarDisplay();
   return (
@@ -20,17 +23,21 @@ const Contact = () => {
           </div>
         </>
       )}
-      <h2>Contact</h2>
+      <h2>Contact </h2>
       <div className="infotext">
+      <FaIcons.FaLinkedin/>  <FaIcons.FaGithub/>
         <p>
           Contact us for more information about the best pairing for dishes and
           drinks.
         </p>
         <div className="images-container">
+          
           <img src={cheersbeer} alt="my-gif" className="mobiledrink" />
           <img src={cheerswine} alt="my-gif" className="mobiledrink" />
           <img src={cheerschampagne} alt="my-gif" className="mobiledrink" />
+          <ContactForm></ContactForm>
         </div>
+        
       </div>
     </section>
   );
