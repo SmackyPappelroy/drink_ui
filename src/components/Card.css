@@ -176,3 +176,10 @@
   position: flex;
   align-items: center;
 }
+
+@media only screen and (max-width: 800px) {
+
+  .drink {
+    flex-basis: 50%;
+  }
+}
