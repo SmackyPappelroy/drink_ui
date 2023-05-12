@@ -156,12 +156,16 @@
 
 
 .drink {
-  height: 50%;
-  width: 15%;
+  padding: 10px;
   border-radius: 10px;
   margin: 15px;
-  position: flex;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex-basis: 20%;
+  max-width: 205px;
 }
 
 .mobiledrink {
