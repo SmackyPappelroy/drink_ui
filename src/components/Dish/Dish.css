@@ -157,7 +157,7 @@
   width: 100%;
 }
 
-.drink-name {
+/* .drink-name {
   grid-row: 5;
   display: flex;
   justify-content: bottom;
@@ -167,7 +167,7 @@
   word-wrap: normal;
   width: 100%;
   text-align: center;
-}
+} */
 
 .allergens {
   grid-row: 2;
