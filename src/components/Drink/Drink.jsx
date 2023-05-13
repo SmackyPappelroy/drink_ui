@@ -6,6 +6,8 @@ import * as Icon from '@fortawesome/free-solid-svg-icons'
 import '../../App.css'
 import { Link } from 'react-router-dom'
 import useNavbarDisplay from '../Navbar/CustomHooks/useNavbarDisplay'
+import PageHeader from '../PageHeader/pageHeader'
+
 
 const findDrinkById = (drinks, id) => {
   return drinks.find((drink) => drink.id === parseInt(id))
@@ -54,6 +56,7 @@ const Drink = () => {
   const id = window.location.pathname.split('/')[2]
   const { drinks, loading } = useGlobalContext()
   const isMobileSize = useNavbarDisplay()
+  const isMobile = useNavbarDisplay()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -76,12 +79,19 @@ const Drink = () => {
 
   return (
     <div className={isMobileSize ? 'drink-mobile' : 'drinkcard'}>
+         {isMobile ? (
+        <></>
+      ) : (
+         <div className="page-header-wrapper">
+          <PageHeader />
+        </div>
+        )}
       <div className="drink-info">
         <h1 className="drink-name">{myDrinks.name}</h1>
       </div>
       <img className="drink-image" src={myDrinks.image} alt={myDrinks.name} />
       <div className="drink-description">
-        <h3>Beskrivning</h3>
+        <h3>Description</h3>
         {myDrinks.description ? (
           <ul>
             {myDrinks.description.split('*').map((description, index) => (
@@ -89,20 +99,20 @@ const Drink = () => {
             ))}
           </ul>
         ) : (
-          <p>Hittade ingen beskrivning.</p>
+          <p>Description not found.</p>
         )}
       </div>
 
       <div className="drink-drinkType">
-        <h3>Drinktyp:</h3>
+        <h3>Drinktype:</h3>
         {myDrinks.drinkType ? (
           <div>{drinkTypeMapping[myDrinks.drinkType]}</div>
         ) : (
-          <p>Hittade inga type.</p>
+          <p>Type not found.</p>
         )}
       </div>
 
-      <h2 className="dish-headline">Rekommenderad rätter</h2>
+      <h2 className="dish-headline">Recommended dishes</h2>
       <div className="dishescard">
         {dishes.dishes
           ? dishes.dishes.map((dish, index) => {
@@ -119,7 +129,7 @@ const Drink = () => {
                 </div>
               )
             })
-          : 'Hittade inga rekommenderade rätter.'}
+          : 'Could not find recommended dishes.'}
       </div>
     </div>
   )

@@ -78,7 +78,7 @@ const Drinks = () => {
   }
   const isMobile = useNavbarDisplay()
   if (loading) {
-    return <h1 className="infotext">Laddar...</h1>;
+    return <h1 className="infotext">Loading...</h1>;
   } else {
     console.log(filteredDrinks.length);
     return (
@@ -110,7 +110,7 @@ const Drinks = () => {
             );
           })
         ) : (
-          <h1 className="infotext">Hittade inga recept</h1>
+          <h1 className="infotext">Drinks not found</h1>
         )}
         <button
           className={filteredDrinks.length > 10 ? "button" : "hidden"}

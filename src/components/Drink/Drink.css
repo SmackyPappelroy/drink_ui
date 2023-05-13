@@ -111,7 +111,7 @@
   margin: 0 auto;
   width: 100%;
   height: auto;
-  max-height: 200px;
+  max-height: 300px;
 }
 
 .drink-info {
@@ -194,12 +194,12 @@
   color: #000000;
   margin-bottom: 10px;
 }
-
+/* 
 .dish-name {
   font-size: 16px;
   word-wrap: normal;
   width: 100%;
-}
+} */
 
 .allergens {
   font-size: 15px;

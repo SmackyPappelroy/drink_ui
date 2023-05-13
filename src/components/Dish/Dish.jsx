@@ -64,7 +64,7 @@ const Dish = () => {
       </div>
       <img className="image" src={myRecipe.image} alt={myRecipe.title} />
       <div className="dish-ingredients">
-        <h3>Ingredienser</h3>
+        <h3>Ingredients</h3>
         {myRecipe.ingredients ? (
           <ul>
             {myRecipe.ingredients.split('*').map((ingredient, index) => (
@@ -72,12 +72,12 @@ const Dish = () => {
             ))}
           </ul>
         ) : (
-          <p>Hittade inga ingredienser.</p>
+          <p>Ingredients not found</p>
         )}
       </div>
 
       <div className="dish-instructions">
-        <h3>Instruktioner</h3>
+        <h3>Instructions</h3>
         {myRecipe.instructions ? (
           <p
             dangerouslySetInnerHTML={{
@@ -88,10 +88,10 @@ const Dish = () => {
             }}
           ></p>
         ) : (
-          <p>Hittade inga instruktioner.</p>
+          <p>Instructions not found</p>
         )}
       </div>
-      <h2 className="drink-headline">Rekommenderad dryck</h2>
+      <h2 className="drink-headline">Recommended drinks</h2>
       <div className="drinks">
         {drinks.drinks
           ? drinks.drinks.map((drink, index) => {
@@ -108,7 +108,7 @@ const Dish = () => {
                 </div>
               )
             })
-          : 'Hittade inga rekommenderade drycker.'}
+          : 'Could not found recommended drinks.'}
       </div>
     </div>
   )
