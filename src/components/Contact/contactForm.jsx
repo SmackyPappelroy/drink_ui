@@ -17,8 +17,27 @@ export const ContactForm =()=>{
       const handleSubmit = (e) => {
         e.preventDefault(); // prevents the page from reloading when you hit “Send”
         
+
+        // emailjs.sendForm(
+        //   process.env.REACT_APP_SERVICE_ID,
+        //   process.env.REACT_APP_TEMPLATE_ID,
+        //   form.current,
+        //   process.env.REACT_APP_USER_ID
+        // ).then((result) => {
+        //           // show the user a success message
+        //       }, (error) => {
+        //           // show the user an error
+        //       });
+      
+        //       alert("Your message is sended 😎")
+      
+        //       setMessage('');
+        //       setEmail('');
+        //       setName('');
+        //       e.target.reset();
+        //   };
   
-        emailjs.sendForm('service_e682ozq', 'template_25txqla', form.current, 'r_SWyYMdkPvk2QaHW')
+        emailjs.sendForm('service_oqjxvg3', 'template_hwbgs43', form.current, 'UxElPSTIQfbjxFTwS')
           .then((result) => {
               // show the user a success message
           }, (error) => {

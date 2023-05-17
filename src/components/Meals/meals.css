@@ -31,13 +31,13 @@
   border-radius: 20px;
 }
 
-.icon {
-  margin: 0% 68%;
+.icons {
+  margin: 0% 50%;
   display: flex;
   flex-wrap: wrap;
 }
 
-.icons {
+.MealsIcons {
   grid-row: 1;
   grid-column: 3;
   gap: 2px;

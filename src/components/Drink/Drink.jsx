@@ -103,16 +103,16 @@ const Drink = () => {
         )}
       </div>
 
-      <div className="drink-drinkType">
+      {/* <div className="drink-drinkType">
         <h3>Drinktype:</h3>
         {myDrinks.drinkType ? (
           <div>{drinkTypeMapping[myDrinks.drinkType]}</div>
         ) : (
           <p>Type not found.</p>
         )}
-      </div>
+      </div> */}
 
-      <h2 className="dish-headline">Recommended dishes</h2>
+      {/* <h2 className="dish-headline">Recommended dishes</h2>
       <div className="dishescard">
         {dishes.dishes
           ? dishes.dishes.map((dish, index) => {
@@ -130,7 +130,7 @@ const Drink = () => {
               )
             })
           : 'Could not find recommended dishes.'}
-      </div>
+      </div> */}
     </div>
   )
 }

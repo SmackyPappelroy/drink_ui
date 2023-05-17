@@ -185,7 +185,7 @@ function Meals() {
               onChange={handleSearchChange}
             />
           </form>
-          <div className="icons">
+          <div className="MealsIcons">
             <FilterMealsButtons
               filters={filtersMeals}
               activeFilters={{
