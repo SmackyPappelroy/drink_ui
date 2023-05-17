@@ -49,6 +49,7 @@ export const ContactForm =()=>{
           setMessage('');
           setEmail('');
           setName('');
+          e.target.reset();
       };
   
       return (
