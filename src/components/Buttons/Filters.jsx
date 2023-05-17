@@ -10,6 +10,7 @@ import {
   faGlassWater,
   faWineGlass,
 } from '@fortawesome/free-solid-svg-icons'
+import React from 'react'
 
 const filters = [
   { name: 'dairyFree', icon: faCheese },

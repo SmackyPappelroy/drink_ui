@@ -7,11 +7,15 @@ const FilterButton = ({ filter, active, onClick }) => {
 
   if (filter.icon) {
     return (
+      <div>
+        
       <FontAwesomeIcon
         className={className}
         onClick={onClick}
         icon={filter.icon}
       />
+      {filter.name}
+      </div>
     )
   }
 
@@ -24,7 +28,7 @@ const FilterButton = ({ filter, active, onClick }) => {
 
 const FilterButtons = ({ filters, activeFilters, onFilterChange }) => {
   return (
-    <div className="icons">
+    <div className="DishesIcons">
       {filters.map((filter) => (
         <FilterButton
           key={filter.name}

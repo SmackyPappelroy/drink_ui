@@ -1,11 +1,14 @@
 .dishes {
-  padding: 10px 30px;
-  margin: 50px auto;
-  width: 75%;
+  position: flex;
+  padding: 20px;
+  margin:2% 6%;
+  width: 90%;
   height: auto;
+  max-height: 120%;
+  left: 10%;
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 20px;
   justify-content: space-between;
   background-color: white;
   border-radius: 20px;
@@ -85,17 +88,17 @@
   margin-right: 2px;
 }
 
-.icons {
+.DishesIcons {
   grid-row: 1;
   grid-column: 3;
-  gap: 2px;
+  gap: 7px;
   display: flex;
+  position: flex;
   flex-direction: row;
   align-items: right;
   justify-content: right;
-  margin-left: 2px;
-  font-size: 1.1rem;
-  cursor: pointer;
+  margin-left: 7px;
+  font-size: 83%;
 }
 
 .icon-clicked {

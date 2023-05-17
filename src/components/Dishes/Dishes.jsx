@@ -118,6 +118,7 @@ function Dishes() {
     setEnd(index + 10)
   }
   const isMobile = useNavbarDisplay()
+
   if (loading) {
     return <h1 className="infotext">Laddar...</h1>
   } else {
@@ -135,7 +136,7 @@ function Dishes() {
               onChange={handleSearchChange}
             />
           </form>
-          <div className="icons">
+          <div className="DishesIcons">
             <FilterButtons
               filters={filters}
               activeFilters={{
